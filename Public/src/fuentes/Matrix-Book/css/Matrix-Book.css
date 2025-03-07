@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Matrix-Book;
+    src: url('https://github.com/ValorKand/Matrix-Book-Font/raw/main/font/Matrix-Book.eot');
+    src: url('https://github.com/ValorKand/Matrix-Book-Font/raw/main/font/Matrix-Book.eot?#iefix') format('embedded-opentype'),
+         url('https://github.com/ValorKand/Matrix-Book-Font/raw/main/font/Matrix-Book.woff2') format('woff2'),
+         url('https://github.com/ValorKand/Matrix-Book-Font/raw/main/font/Matrix-Book.woff') format('woff'),
+         url('https://github.com/ValorKand/Matrix-Book-Font/raw/main/font/Matrix-Book.ttf') format('truetype'),
+         url('https://github.com/ValorKand/Matrix-Book-Font/raw/main/font/Matrix-Book.otf') format('opentype'),'
+         url('https://raw.githubusercontent.com/ValorKand/Matrix-Book-Font/main/font/Matrix-Book.svg') format('svg');
+    font-style: normal;
+}

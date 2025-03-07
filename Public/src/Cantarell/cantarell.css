@@ -1,0 +1,19 @@
+/* cantarell.css */
+
+@font-face {
+    font-family: "Cantarell";
+    src: url("./fuente/Cantarell.otf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cantarell";
+    src: url("./fuente/Cantarell.otf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Cantarell";
+    src: url("./fuente/Cantarell.otf");
+    font-style: bold;
+}
