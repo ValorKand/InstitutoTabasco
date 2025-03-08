@@ -1,15 +1,21 @@
 /* cuerpo.css */
 
 #cuerpo {
-    padding-top: 5%;
+    padding-top: 1%;
 }
 
 #titulo {
-    padding-top: 8%;
+    padding-top: 7%;
     padding-left: 10%;
 }
 
+#imagen_principal {
+    padding-top: 6%;
+    padding-left: 5%;
+    margin: 0;
+    width: 80%;
+}
 .recomendacion {
     padding-top: 3%;
-    font-size: 16pt;
+    font-size: 14pt;
 }

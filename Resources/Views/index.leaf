@@ -20,20 +20,73 @@
                     <span class="logo">Instituto Tabasco – Inscripciones</span>
                 </div>
             </div>
-        </div>
-        <div class="ui vertical segment">
-            <div id="cuerpo" class="ui vertical segment">
-                <div class="ui two column doubling grid">
-                    <div id="titulo" class="column">
-                        <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
-                        <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
-                        <a href="#" class="ui circular massive red button">Iniciar inscripción</a>
-                        <div class="ui attached message">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
-                        <div class="ui attached info message">Registro válido para el periodo escolar 2025-2026</div>
-                        <div class="ui attached warning message">Esta convocatoria estará abierta hasta las 23:59:00 hrs de el día X de X de 2025.</div>
+            <div class="ui vertical segment">
+                <div id="cuerpo" class="ui vertical segment">
+                    <div class="ui two column doubling grid">
+                        <div id="titulo" class="column">
+                            <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
+                            <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
+                            <a href="#" class="ui circular massive red button">Iniciar inscripción</a>
+                            <div class="recomendacion">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
+                            <div class="recomendacion">Registro válido para el periodo escolar <b>2025-2026</b></div>
+                            <div class="recomendacion">Esta convocatoria estará abierta hasta las <b>23:59:00 hrs de el día X de X de 2025.</b></div>
+                        </div>
+                        <div class="column">
+                            <img id="imagen_principal" src="./src/img/chamaquitos.webp" class="ui right aligned image">
+                        </div>
+                        <div class="ui centrado container">
+                            <div class="ui info message">
+                                <span>Aviso de privacidad: Los datos personales recabados serán usados con fines de identificación y de contacto para el proceso de admisión de este Instituto.</span>
+                                <span><p><b>Instituto Tabasco 2025 - Dirección de Tecnologías de la Información.</b><img class="ui right floated mini image" src="./src/img/tux.webp"/></p></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="column">
-                        <img src="./src/img/chamaquitos.webp" class="ui big image">
+                </div>
+            </div>
+            <div class="ui mobile only widescreen only grid">
+                <div class="ui top fixed borderless menu">
+                    <div class="item">
+                        <img src="./src/iu/logo.png"/>
+                        <span class="logo">Instituto Tabasco – Inscripciones</span>
+                    </div>
+                </div>
+                <img id="imagen_principal" src="./src/img/chamaquitos.webp" class="ui centered image">
+                <div class="ui container">
+                    <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
+                    <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
+                    <a href="#" class="ui circular massive red button">Iniciar inscripción</a>
+                    <div class="recomendacion">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
+                    <div class="recomendacion">Registro válido para el periodo escolar <b>2025-2026</b></div>
+                    <div class="recomendacion">Esta convocatoria estará abierta hasta las <b>23:59:00 hrs de el día X de X de 2025.</b></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui vertical footer segment">
+            <div class="ui container">
+                <div class="ui stackable inverted divided equal height stackable grid">
+                    <div class="three wide column">
+                        <h4 class="ui header">Acerca de</h4>
+                        <div class="ui link list">
+                            <a class="item" href="https://valorkand.github.io/vcwebsite">Hecho por Vales Corp</a>
+                            <a class="item" id="avisoPrivacidad">Aviso de privacidad</a>
+                            <a class="item" href="mailto:david.tab2023@icloud.com">Reportar un error</a>
+                        </div>
+                    </div>
+                    <div class="three wide column">
+                        <h4 class="ui inverted header">Encuéntranos en</h4>
+                        <div class="ui inverted link list">
+                            <a class="ui facebook icon button" href="https://www.facebook.com/people/Instituto-Tabasco/100069703609214/" target="_blank"><i class="facebook icon"></i></a>
+                            <a class="ui pink icon button" href="https://www.instagram.com/institutotabasco/"><i class="instagram icon" target="_blank"></i></a>
+                            <a class="ui youtube icon button" href="https://www.youtube.com/@institutotabasco9927" target="_blank"><i class="youtube icon"></i></a>
+                            <a class="ui white icon button" href="mailto:institutotabasco.edu@gmail.com" target="_blank"><i class="envelope icon"></i></a>
+                        </div>
+                    </div>
+                    <div class="seven wide column">
+                        <h4 class="ui inverted header">Instituto Tabasco</h4>
+                        <p>
+                            Hecho con Amor, Software Libre, y 100% de Código Abierto, más información acerca
+                            de su desarrollo <a href="./paginas/extra/acercade.html">aquí</a>
+                        </p>
                     </div>
                 </div>
             </div>
