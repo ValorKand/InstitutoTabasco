@@ -5,6 +5,7 @@
         <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
         <link type="text/css" rel="stylesheet" href="./src/semantic/semantic.css"></link>
         <link type="text/css" rel="stylesheet" href="./src/materialsymbols/css/materialsymbols.css"></link>
+        <link type="text/css" rel="stylesheet" href="./src/css/componentes.css"></link>
         <link type="text/css" rel="stylesheet" href="./src/css/cuerpo.css"></link>
         <link type="text/css" rel="stylesheet" href="./src/fuentes/Matrix-Book/css/Matrix-Book.css"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"/>
@@ -13,16 +14,29 @@
     </head>
     <body id="root">
         <div class="computer only ui grid">
-            <div class="ui top fixed menu">
+            <div class="ui top fixed borderless menu">
                 <div class="item">
                     <img src="./src/iu/logo.png"/>
                     <span class="logo">Instituto Tabasco – Inscripciones</span>
                 </div>
             </div>
         </div>
-        <div class="ui segment">
-            <h1>Instituto Tabasco</h1>
-            <h2>Empieza a estudiar ahora en el mejor colegio de Villahermosa, ¡Inscríbete ahora!</h2>
+        <div class="ui vertical segment">
+            <div id="cuerpo" class="ui vertical segment">
+                <div class="ui two column doubling grid">
+                    <div id="titulo" class="column">
+                        <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
+                        <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
+                        <a href="#" class="ui circular massive red button">Iniciar inscripción</a>
+                        <div class="ui attached message">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
+                        <div class="ui attached info message">Registro válido para el periodo escolar 2025-2026</div>
+                        <div class="ui attached warning message">Esta convocatoria estará abierta hasta las 23:59:00 hrs de el día X de X de 2025.</div>
+                    </div>
+                    <div class="column">
+                        <img src="./src/img/chamaquitos.webp" class="ui big image">
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>

@@ -28,19 +28,10 @@
 
 .dorado {
     color: transparent;
-    background: linear-gradient(
-        270deg,
-        #f7ef8a,
-        #d2ac47,
-        #edc967,
-        #dfbd69,
-        #ccaf20,
-        #b7b26c
-    );
-    animation: gradiente 64s linear infinite;
+    background: linear-gradient(270deg, #ae8625, #f7ef8a, #d2ac47, #edc967);
+    animation: gradiente 100s linear infinite;
     background-size: 60% 100%;
     -webkit-background-clip: text;
-    text-align: center;
 }
 
 .aquamarina {
@@ -168,4 +159,12 @@
         rgb(0, 0, 0) 6.37426px -2.89289px 0px,
         rgb(0, 0, 0) 6.72119px -1.95591px 0px,
         rgb(0, 0, 0) 6.93119px -0.979076px 0px;
+}
+
+.enorme {
+    font-size: 40pt;
+}
+
+.azul {
+    color: #3f51b5;
 }
