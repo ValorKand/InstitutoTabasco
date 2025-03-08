@@ -10,5 +10,9 @@ func routes(_ app: Application) throws {
         "¡Fieles al Deber!"
     }
 
+    app.get("inscripcion.leaf") { req async throws -> View in
+        try await req.view.render("inscripcion", ["title": "Instituto Tabasco – Inscripciones"])
+    }
+
     try app.register(collection: TodoController())
 }

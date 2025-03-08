@@ -20,29 +20,6 @@
                     <span class="logo">Instituto Tabasco – Inscripciones</span>
                 </div>
             </div>
-            <div class="ui vertical segment">
-                <div id="cuerpo" class="ui vertical segment">
-                    <div class="ui two column doubling grid">
-                        <div id="titulo" class="column">
-                            <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
-                            <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
-                            <a href="/inscripcion.leaf" class="ui circular massive red button">Iniciar inscripción</a>
-                            <div class="recomendacion">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
-                            <div class="recomendacion">Registro válido para el periodo escolar <b>2025-2026</b></div>
-                            <div class="recomendacion">Esta convocatoria estará abierta hasta las <b>23:59:00 hrs de el día X de X de 2025.</b></div>
-                        </div>
-                        <div class="column">
-                            <img id="imagen_principal" src="./src/img/chamaquitos.webp" class="ui right aligned image">
-                        </div>
-                        <div class="ui centrado container">
-                            <div class="ui info message">
-                                <span>Aviso de privacidad: Los datos personales recabados serán usados con fines de identificación y de contacto para el proceso de admisión de este Instituto.</span>
-                                <span><p><b>Instituto Tabasco 2025 - Dirección de Tecnologías de la Información.</b><img class="ui right floated mini image" src="./src/img/tux.webp"/></p></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="ui mobile only widescreen only grid">
                 <div class="ui top fixed borderless menu">
                     <div class="item">
@@ -50,16 +27,63 @@
                         <span class="logo">Instituto Tabasco – Inscripciones</span>
                     </div>
                 </div>
-                <img id="imagen_principal" src="./src/img/chamaquitos.webp" class="ui centered image">
-                <div class="ui container">
-                    <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
-                    <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
-                    <a href="#" class="ui circular massive red button">Iniciar inscripción</a>
-                    <div class="recomendacion">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
-                    <div class="recomendacion">Registro válido para el periodo escolar <b>2025-2026</b></div>
-                    <div class="recomendacion">Esta convocatoria estará abierta hasta las <b>23:59:00 hrs de el día X de X de 2025.</b></div>
-                </div>
             </div>
+        </div>
+        <div class="ui header">
+            <h1 class="header">Bienvenido al Registro en línea del Instituto Tabasco</h1>
+            <div class="ui divider"></div>
+            <p>Todos los campos son obligatorios, escriba detenidamente</p>
+            <form action="#" method="POST" class="ui large form">
+                <div class="ui stacked segment">
+                    <div class="field">
+                        <div class="ui dividing header">Datos del alumno</div>
+                        <div class="three fields">
+                            <div class="field">
+                                <div class="ui left input">
+                                    <input type="text" name="nombre" placeholder="Nombre">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left input">
+                                    <input type="text" name="apellido_paterno" placeholder="Apellido paterno">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left input">
+                                    <input type="text" name="apellido_materno" placeholder="Apellido materno">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left input">
+                            <input type="text" name="apellido_materno" placeholder="Segundo apellido">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left input">
+                            <input type="text" name="correo" placeholder="Correo electrónico">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left input">
+                            <input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left input">
+                            <input type="password" name="secreto" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left input">
+                            <input type="password" name="confirma_secreto" placeholder="Repite tu contraseña">
+                        </div>
+                    </div>
+                    <button class="ui fluid large blue submit button" type="submit">Registrar</button>
+                </div>
+                <div class="ui error message"></div>
+            </form>
         </div>
         <div class="ui vertical footer segment">
             <div class="ui container">
