@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    //menú dropdown
+    // menús dropdown
     $(".ui.dropdown").dropdown();
-    //acordeones
+    // acordeones
     $(".ui.accordion").accordion();
     // popups
     $(".ver.mas").popup();
@@ -9,45 +9,54 @@ $(document).ready(function () {
         context: "#submenusticky",
         pushing: true,
     });
+    // checkbox
+    $(".ui.checkbox").checkbox();
 
-    $("#bitacora").click(function () {
-        $("#modalTextarea").val($(this).val()); // Pasar el texto al modal
-        $("#textModal").modal("show");
+    // Definir las opciones para cada sección
+    const secciones = {
+        preescolar: ["1ro", "2do", "3ro"],
+        primaria: ["1ro", "2do", "3ro", "4to", "5to", "6to"],
+        secundaria: ["1ro", "2do", "3ro"],
+        bachillerato: ["1ro", "2do", "3ro", "4to", "5to", "6to"],
+    };
+
+    // Obtener los select
+    const $seccionSelect = $("#seccion");
+    const $gradoSelect = $("#grado");
+
+    // Escuchar cambios en el primer select
+    $(document).ready(function () {
+        // Definir las opciones para cada sección
+        const secciones = {
+            preescolar: ["1ro", "2do", "3ro"],
+            primaria: ["1ro", "2do", "3ro", "4to", "5to", "6to"],
+            secundaria: ["1ro", "2do", "3ro"],
+            bachillerato: ["1ro", "2do", "3ro", "4to", "5to", "6to"],
+        };
+
+        // Obtener los select con jQuery
+        const $seccionSelect = $("#seccion");
+        const $gradoSelect = $("#grado");
+
+        // Escuchar cambios en el primer select
+        $seccionSelect.on("change", function () {
+            let seccionSeleccionada = $(this).val();
+
+            // Limpiar las opciones anteriores del segundo select
+            $gradoSelect
+                .empty()
+                .append('<option value="nulo">Selecciona un grado</option>');
+
+            if (secciones[seccionSeleccionada]) {
+                $gradoSelect.prop("disabled", false); // Habilita el select
+
+                // Agregar las nuevas opciones
+                secciones[seccionSeleccionada].forEach((grado) => {
+                    $gradoSelect.append(new Option(grado, grado.toLowerCase()));
+                });
+            } else {
+                $gradoSelect.prop("disabled", true); // Deshabilita el select
+            }
+        });
     });
-
-    $("#guardar").click(function () {
-        let nuevoTexto = $("#modalTextarea").val().trim();
-        $("#bitacora").val(nuevoTexto); // Asegurarse de que el valor se guarde
-        $("#textModal").modal("hide");
-    });
-
-    $("#cancelar").click(function () {
-        $("#textModal").modal("hide");
-    });
-});
-
-//función para mostrar el formulario de nueva orden de servicio
-document.addEventListener("DOMContentLoaded", () => {
-    const botonNuevaOrden = document.getElementById("nuevaOrden");
-    const formulario = document.getElementById("formularioOrdenes");
-
-    botonNuevaOrden.addEventListener("click", () => {
-        if (formulario.classList.contains("oculto")) {
-            formulario.classList.remove("oculto"); // Muestra el formulario
-        } else {
-            formulario.classList.add("oculto"); // Oculta el formulario
-        }
-    });
-});
-
-const menuButton = document.getElementById("menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
-const closeMenu = document.getElementById("close-menu");
-
-menuButton.addEventListener("click", () => {
-    mobileMenu.classList.add("show");
-});
-
-closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.remove("show");
 });

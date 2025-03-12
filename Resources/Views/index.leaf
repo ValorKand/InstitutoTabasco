@@ -26,7 +26,10 @@
                         <div id="titulo" class="column">
                             <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
                             <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
-                            <a href="/inscripcion.leaf" class="ui circular massive red button">Iniciar inscripción</a>
+                            <a href="/inscripcion.leaf" class="ui circular massive red button">
+                                <span class="boton icono material-symbols-outlined">edit_square</span>
+                                Iniciar inscripción
+                            </a>
                             <div class="recomendacion">Deberás tener a la mano todos tus datos personales, así como tu <b>correo electrónico.</b></div>
                             <div class="recomendacion">Registro válido para el periodo escolar <b>2025-2026</b></div>
                             <div class="recomendacion">Esta convocatoria estará abierta hasta las <b>23:59:00 hrs de el día X de X de 2025.</b></div>

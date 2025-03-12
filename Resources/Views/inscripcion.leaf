@@ -29,62 +29,175 @@
                 </div>
             </div>
         </div>
-        <div class="ui header">
+        <div id="formulario" class="ui header">
             <h1 class="header">Bienvenido al Registro en línea del Instituto Tabasco</h1>
             <div class="ui divider"></div>
-            <p>Todos los campos son obligatorios, escriba detenidamente</p>
-            <form action="#" method="POST" class="ui large form">
-                <div class="ui stacked segment">
-                    <div class="field">
-                        <div class="ui dividing header">Datos del alumno</div>
-                        <div class="three fields">
+            <div class="ui middle aligned center aligned grid">
+                <div class="formulario column">
+                    <p>Todos los campos son obligatorios, escriba detenidamente</p>
+                    <form action="/registrarInscripcion" method="POST" class="ui large form">
+                        <div class="ui stacked segment">
                             <div class="field">
-                                <div class="ui left input">
-                                    <input type="text" name="nombre" placeholder="Nombre">
+                                <div class="ui left aligned dividing header">Datos del alumno 👧🧒</div>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label>Ciclo Escolar</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="ciclo_escolar" placeholder="2024-2025">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <!--seleccion de seccion -->
+                                        <label>Sección</label>
+                                        <div class="ui left input">
+                                            <select type="select" id="seccion" name="seccion" placeholder="Selecciona una sección">
+                                                <option value="nulo">Selecciona una sección</option>
+                                                <option value="preescolar">Preescolar</option>
+                                                <option value="primaria">Primaria</option>
+                                                <option value="secundaria">Secundaria</option>
+                                                <option value="bachillerato">Bachillerato</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Grado a cursar</label>
+                                        <select type="select" id="grado" name="grado" placeholder="Selecciona un grado" disabled>
+                                            <option value="nulo">Selecciona un grado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Datos del alumno -->
+                                <div class="four fields">
+                                    <div class="field">
+                                        <label>Nombre(s)</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="nombre" placeholder="Luis Fernando">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Apellido paterno</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="apellido_paterno" placeholder="García">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Apellido materno</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="apellido_materno" placeholder="Méndez">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Fecha de nacimiento</label>
+                                        <div class="ui left input">
+                                            <input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- datos de tutor -->
+                                <div class="ui left aligned dividing header">Datos de la madre 👩</div>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label>Nombre(s)</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="nombre" placeholder="Daniela">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Apellido paterno</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="apellido_paterno" placeholder="Carrasco">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Apellido materno</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="apellido_materno" placeholder="Bautista">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label>Número de teléfono</label>
+                                        <div class="ui left input">
+                                            <input type="tel" name="telefono" placeholder="9933128843">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Correo</label>
+                                        <div class="ui left input">
+                                            <input type="email" name="correo" placeholder="ejemplo@icloud.com">
+                                        </div>
+                                    </div>
+                                    <div class="two wide field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" name="es_tutor">
+                                            <label>¿Es tutor?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- padre -->
+                                <div class="ui left aligned dividing header">Datos del padre 🧑</div>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label>Nombre(s)</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="nombre" placeholder="Rufino del Cármen">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Apellido paterno</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="apellido_paterno" placeholder="Arellanes">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Apellido materno</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="apellido_materno" placeholder="Tamayo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label>Número de teléfono</label>
+                                        <div class="ui left input">
+                                            <input type="tel" name="telefono" placeholder="9933231254">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Correo</label>
+                                        <div class="ui left input">
+                                            <input type="email" name="correo" placeholder="ejemplo@icloud.com">
+                                        </div>
+                                    </div>
+                                    <div class="two wide field">
+                                        <div class="ui checkbox">
+                                            <input type="checkbox" id="es_tutor" name="es_tutor">
+                                            <label>¿Es tutor?</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui left aligned dividing header">Otros datos 📲</div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>En caso de emergencia, llamar a</label>
+                                        <div class="ui left input">
+                                            <input type="tel" name="telefono_emergencia" placeholder="911">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Domicilio particular</label>
+                                        <textarea name="domicilio" id="domicilio"></textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="field">
-                                <div class="ui left input">
-                                    <input type="text" name="apellido_paterno" placeholder="Apellido paterno">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui left input">
-                                    <input type="text" name="apellido_materno" placeholder="Apellido materno">
-                                </div>
-                            </div>
+                            <button class="ui fluid large blue submit button" type="submit">Registrar</button>
+                            <div class="ui error message"></div>
                         </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left input">
-                            <input type="text" name="apellido_materno" placeholder="Segundo apellido">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left input">
-                            <input type="text" name="correo" placeholder="Correo electrónico">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left input">
-                            <input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left input">
-                            <input type="password" name="secreto" placeholder="Contraseña">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui left input">
-                            <input type="password" name="confirma_secreto" placeholder="Repite tu contraseña">
-                        </div>
-                    </div>
-                    <button class="ui fluid large blue submit button" type="submit">Registrar</button>
+                    </form>
                 </div>
-                <div class="ui error message"></div>
-            </form>
-        </div>
+            </div>
+        </div>id
         <div class="ui vertical footer segment">
             <div class="ui container">
                 <div class="ui stackable inverted divided equal height stackable grid">
@@ -117,5 +230,7 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+        <script src="./src/js/funciones.js"></script>
+        <script src="./src/js/validaInscripcion.js"></script>
     </body>
 </html>

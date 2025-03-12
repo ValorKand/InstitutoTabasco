@@ -19,3 +19,29 @@
     padding-top: 3%;
     font-size: 14pt;
 }
+
+.formulario.column {
+    max-width: 70%;
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+#formulario {
+    background-image: url("../iu/fondo.webp");
+    background-size: cover;
+}
+
+.difuminado {
+    background: rgba(
+        255,
+        255,
+        255,
+        0.1
+    ) !important; /* Fondo casi transparente */
+    backdrop-filter: blur(10px); /* Efecto de difuminado */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+    box-shadow: none !important; /* Quita sombras predeterminadas */
+}
