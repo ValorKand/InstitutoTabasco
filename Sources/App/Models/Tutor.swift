@@ -22,14 +22,17 @@ final class Tutor: Model, Content {
     @Field(key: "telefono")
     var telefono: String
 
-    @Field(key: "ocupacion")
-    var ocupacion: String
-
     @Field(key: "domicilio")
     var domicilio: String
 
     @Field(key: "numero_emergencia")
     var numero_emergencia: String
+
+    @Field(key: "correo")
+    var correo: String
+
+    @Field(key: "parentesco")
+    var parentesco: Bool
 
     init() {}
 
@@ -39,18 +42,19 @@ final class Tutor: Model, Content {
         apellido_paterno: String,
         apellido_materno: String,
         telefono: String,
-        ocupacion: String,
         domicilio: String,
-        numero_emergencia: String
+        numero_emergencia: String,
+        correo: String,
+        parentesco: Bool
     ) {
         self.id = id
         self.nombre = nombre
         self.apellido_paterno = apellido_paterno
         self.apellido_materno = apellido_materno
         self.telefono = telefono
-        self.ocupacion = ocupacion
         self.domicilio = domicilio
         self.numero_emergencia = numero_emergencia
-
+        self.correo = correo
+        self.parentesco = parentesco
     }
 }

@@ -20,10 +20,6 @@ $(document).ready(function () {
         bachillerato: ["1ro", "2do", "3ro", "4to", "5to", "6to"],
     };
 
-    // Obtener los select
-    const $seccionSelect = $("#seccion");
-    const $gradoSelect = $("#grado");
-
     // Escuchar cambios en el primer select
     $(document).ready(function () {
         // Definir las opciones para cada sección
@@ -36,7 +32,7 @@ $(document).ready(function () {
 
         // Obtener los select con jQuery
         const $seccionSelect = $("#seccion");
-        const $gradoSelect = $("#grado");
+        const $gradoSelect = $("#año_cursara");
 
         // Escuchar cambios en el primer select
         $seccionSelect.on("change", function () {

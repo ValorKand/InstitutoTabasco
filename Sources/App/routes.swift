@@ -14,5 +14,7 @@ func routes(_ app: Application) throws {
         try await req.view.render("inscripcion", ["title": "Instituto Tabasco – Inscripciones"])
     }
 
+    app.post("registraInscripcion", use: registrarInscripcion)
+
     try app.register(collection: TodoController())
 }

@@ -16,9 +16,6 @@ final class Inscripcion: Model, Content {
     @Field(key: "año_cursara")
     var año_cursara: Int
 
-    @Field(key: "grupo")
-    var grupo: String
-
     @Parent(key: "alumno_id")
     var alumno_id: Alumno
 
@@ -37,16 +34,16 @@ final class Inscripcion: Model, Content {
         id: Int? = nil,
         ciclo_escolar: String,
         año_cursara: Int,
-        grupo: String,
         alumno_id: Alumno,
+        tutor_id: Tutor,
         es_tutor_principal: Bool,
         tiene_hermanos: Bool
     ) {
         self.id = id
         self.ciclo_escolar = ciclo_escolar
         self.año_cursara = año_cursara
-        self.grupo = grupo
         self.alumno_id = alumno_id
+        self.tutor_id = tutor_id
         self.es_tutor_principal = es_tutor_principal
         self.tiene_hermanos = tiene_hermanos
     }

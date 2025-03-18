@@ -25,6 +25,9 @@ final class Alumno: Model, Content {
     @Field(key: "edad")
     var edad: Int?
 
+    @Field(key: "curp")
+    var curp: String
+
     init() {}
 
     init(
@@ -33,7 +36,8 @@ final class Alumno: Model, Content {
         apellido_paterno: String,
         apellido_materno: String,
         fecha_nacimiento: Date,
-        edad: Int
+        edad: Int,
+        curp: String
     ) {
         self.id = id
         self.nombre = nombre
@@ -41,5 +45,6 @@ final class Alumno: Model, Content {
         self.apellido_materno = apellido_materno
         self.fecha_nacimiento = fecha_nacimiento
         self.edad = edad
+        self.curp = curp
     }
 }
