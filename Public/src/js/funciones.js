@@ -55,4 +55,19 @@ $(document).ready(function () {
             }
         });
     });
+
+    /*    $.fn.form.settings.rules.tutorRequerido = function () {
+        return (
+            $("#madre_es_tutor").is(":checked") ||
+            $("#padre_es_tutor").is(":checked")
+        );
+    };
+
+    $.fn.form.settings.rules.pagadorRequerido = function () {
+        return (
+            $("#madre_pagador").is(":checked") ||
+            $("#padre_pagador").is(":checked")
+        );
+    };
+    */
 });

@@ -95,12 +95,12 @@
                                     <div class="field">
                                         <label>CURP</label>
                                         <div class="ui left input">
-                                            <input type="text" name="CURP" placeholder="Fecha de nacimiento">
+                                            <input type="text" name="curp" placeholder="CURP">
                                         </div>
                                     </div>
                                 </div>
                                 <!-- datos de tutor -->
-                                <div class="ui left aligned dividing header">Datos de la madre 👩</div>
+                                <div class="ui left aligned dividing header">Datos de mamá 👩</div>
                                 <div class="three fields">
                                     <div class="field">
                                         <label>Nombre(s)</label>
@@ -148,7 +148,7 @@
                                     </div>
                                 </div>
                                 <!-- padre -->
-                                <div class="ui left aligned dividing header">Datos del padre 🧑</div>
+                                <div class="ui left aligned dividing header">Datos de papá 🧑</div>
                                 <div class="three fields">
                                     <div class="field">
                                         <label>Nombre(s)</label>
@@ -215,7 +215,7 @@
                     </form>
                 </div>
             </div>
-        </div>id
+        </div>
         <div class="ui vertical footer segment">
             <div class="ui container">
                 <div class="ui stackable inverted divided equal height stackable grid">
@@ -250,5 +250,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
         <script src="./src/js/funciones.js"></script>
         <script src="./src/js/validaInscripcion.js"></script>
+        <script src="./src/js/validaFecha.js"></script>
     </body>
 </html>

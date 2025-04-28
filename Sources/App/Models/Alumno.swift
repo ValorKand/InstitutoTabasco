@@ -22,8 +22,9 @@ final class Alumno: Model, Content {
     @Field(key: "fecha_nacimiento")
     var fecha_nacimiento: Date
 
-    @Field(key: "edad")
-    var edad: Int?
+    // Comento esto porque parece ser que no lo usaré
+    /*@Field(key: "edad")
+    var edad: Int?*/
 
     @Field(key: "curp")
     var curp: String
@@ -36,7 +37,7 @@ final class Alumno: Model, Content {
         apellido_paterno: String,
         apellido_materno: String,
         fecha_nacimiento: Date,
-        edad: Int,
+        //edad: Int,
         curp: String
     ) {
         self.id = id
@@ -44,7 +45,7 @@ final class Alumno: Model, Content {
         self.apellido_paterno = apellido_paterno
         self.apellido_materno = apellido_materno
         self.fecha_nacimiento = fecha_nacimiento
-        self.edad = edad
+        //self.edad = edad
         self.curp = curp
     }
 }
