@@ -1,10 +1,10 @@
-// Alumno.swift
+// Alumnos.swift
 // Modelo de registro a base de datos de la tabla alumno
 
 import Fluent
 import Vapor
 
-final class Alumno: Model, Content {
+final class Alumnos: Model, Content {
     static let schema = "alumnos"
 
     @ID(custom: "id")
@@ -22,10 +22,6 @@ final class Alumno: Model, Content {
     @Field(key: "fecha_nacimiento")
     var fecha_nacimiento: Date
 
-    // Comento esto porque parece ser que no lo usaré
-    /*@Field(key: "edad")
-    var edad: Int?*/
-
     @Field(key: "curp")
     var curp: String
 
@@ -37,7 +33,6 @@ final class Alumno: Model, Content {
         apellido_paterno: String,
         apellido_materno: String,
         fecha_nacimiento: Date,
-        //edad: Int,
         curp: String
     ) {
         self.id = id
@@ -45,7 +40,6 @@ final class Alumno: Model, Content {
         self.apellido_paterno = apellido_paterno
         self.apellido_materno = apellido_materno
         self.fecha_nacimiento = fecha_nacimiento
-        //self.edad = edad
         self.curp = curp
     }
 }

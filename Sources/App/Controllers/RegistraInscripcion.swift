@@ -1,5 +1,6 @@
 // RegistraInscripcion.swift
 // Registra el proceso de inscripcion a la base de datos en tablas alumnos, tutores, inscripciones, historial_movimientos
+//TODO: terminar esto, hay que compioner los registros, y con esto se supone que debería funcionar :c
 
 import Fluent
 import Vapor
@@ -9,7 +10,7 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
 
     return try await req.db.transaction { db in
         // 1. Registrar Alumno
-        let alumno = Alumno(
+        let alumno = Alumnos(
             nombre: registro.alumno_nombre,
             apellido_paterno: registro.alumno_apellido_paterno,
             apellido_materno: registro.alumno_apellido_materno,
@@ -21,20 +22,23 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
 
         // OJO: parentesco es booleano, verdadero = madre, falso = padre
         // 2. Registrar Mamá
-        let madre = Tutor(
+        let madre = Tutores(
             nombre: registro.madre_nombre,
             apellido_paterno: registro.madre_apellido_paterno,
             apellido_materno: registro.madre_apellido_materno,
+            curp: registro.curp,
             telefono: registro.madre_telefono,
             domicilio: registro.domicilio,
             numero_emergencia: registro.telefono_emergencia,
             correo: registro.madre_correo,
+            es_tutor: registro.madre_es_tutor,
+            madre_pagador: registro.es_pagador,
             parentesco: true
         )
         try await madre.create(on: db)
 
         // 3. Registrar Papá
-        let padre = Tutor(
+        let padre = Tutores(
             nombre: registro.padre_nombre,
             apellido_paterno: registro.padre_apellido_paterno,
             apellido_materno: registro.padre_apellido_materno,
@@ -45,23 +49,6 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
             parentesco: false
         )
         try await padre.create(on: db)
-
-        // 4. Asociar tutores con el alumno solo si fueron marcados como tutores
-        if registro.madre_es_tutor == true {
-            try await AlumnoTutor(
-                alumno_id: try alumno.requireID(),
-                tutor_id: try madre.requireID(),
-                pagador: registro.madre_pagador ?? false
-            ).create(on: db)
-        }
-
-        if registro.padre_es_tutor == true {
-            try await AlumnoTutor(
-                alumno_id: try alumno.requireID(),
-                tutor_id: try padre.requireID(),
-                pagador: registro.padre_pagador ?? false
-            ).create(on: db)
-        }
 
         return .created
     }

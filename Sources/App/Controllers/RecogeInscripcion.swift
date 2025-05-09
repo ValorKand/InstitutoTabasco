@@ -17,6 +17,7 @@ struct RecogeInscripcion: Decodable {
     let madre_nombre: String
     let madre_apellido_paterno: String
     let madre_apellido_materno: String
+    let madre_curp: String
     let madre_telefono: String
     //let madre_ocupacion: String
     //let madre_domicilio: String
@@ -29,6 +30,7 @@ struct RecogeInscripcion: Decodable {
     let padre_nombre: String
     let padre_apellido_paterno: String
     let padre_apellido_materno: String
+    let padre_curp: String
     let padre_telefono: String
     //let padre_ocupacion: String
     //let padre_domicilio: String

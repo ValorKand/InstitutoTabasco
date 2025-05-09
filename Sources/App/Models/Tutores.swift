@@ -4,11 +4,17 @@
 import Fluent
 import Vapor
 
-final class Tutor: Model, Content {
+final class Tutores: Model, Content {
     static let schema = "tutores"
 
     @ID(custom: "id")
     var id: Int?
+
+    @Parent(key: "alumno_id")
+    var alumno_id: Alumnos
+
+    @Field(key: "parentesco")
+    var parentesco: String
 
     @Field(key: "nombre")
     var nombre: String
@@ -19,42 +25,46 @@ final class Tutor: Model, Content {
     @Field(key: "apellido_materno")
     var apellido_materno: String
 
+    @Field(key: "curp")
+    var curp: String
+
     @Field(key: "telefono")
     var telefono: String
-
-    @Field(key: "domicilio")
-    var domicilio: String
-
-    @Field(key: "numero_emergencia")
-    var numero_emergencia: String
 
     @Field(key: "correo")
     var correo: String
 
-    @Field(key: "parentesco")
-    var parentesco: Bool
+    @Field(key: "es_tutor")
+    var es_tutor: Bool
+
+    @Field(key: "es_pagador")
+    var es_pagador: Bool
 
     init() {}
 
     init(
         id: Int? = nil,
+        alumno_id: Alumnos,
+        parentesco: String,
         nombre: String,
         apellido_paterno: String,
         apellido_materno: String,
+        curp: String,
         telefono: String,
-        domicilio: String,
-        numero_emergencia: String,
         correo: String,
-        parentesco: Bool
+        es_tutor: Bool,
+        es_pagador: Bool
     ) {
         self.id = id
+        self.alumno_id = alumno_id
+        self.parentesco = parentesco
         self.nombre = nombre
         self.apellido_paterno = apellido_paterno
         self.apellido_materno = apellido_materno
+        self.curp = curp
         self.telefono = telefono
-        self.domicilio = domicilio
-        self.numero_emergencia = numero_emergencia
         self.correo = correo
-        self.parentesco = parentesco
+        self.es_tutor = es_tutor
+        self.es_pagador = es_pagador
     }
 }

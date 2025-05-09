@@ -101,7 +101,7 @@
                                 </div>
                                 <!-- datos de tutor -->
                                 <div class="ui left aligned dividing header">Datos de mamá 👩</div>
-                                <div class="three fields">
+                                <div class="four fields">
                                     <div class="field">
                                         <label>Nombre(s)</label>
                                         <div class="ui left input">
@@ -118,6 +118,12 @@
                                         <label>Apellido materno</label>
                                         <div class="ui left input">
                                             <input type="text" name="madre_apellido_materno" placeholder="Bautista">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>CURP</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="madre_curp" placeholder="CURP">
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +155,7 @@
                                 </div>
                                 <!-- padre -->
                                 <div class="ui left aligned dividing header">Datos de papá 🧑</div>
-                                <div class="three fields">
+                                <div class="four fields">
                                     <div class="field">
                                         <label>Nombre(s)</label>
                                         <div class="ui left input">
@@ -166,6 +172,12 @@
                                         <label>Apellido materno</label>
                                         <div class="ui left input">
                                             <input type="text" name="padre_apellido_materno" placeholder="Tamayo">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>CURP</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="padre_curp" placeholder="CURP">
                                         </div>
                                     </div>
                                 </div>
