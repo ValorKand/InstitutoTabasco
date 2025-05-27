@@ -4,6 +4,13 @@
 import Fluent
 import Vapor
 
+enum Seccion: String, Codable, CaseIterable {
+    case preescolar
+    case primaria
+    case secundaria
+    case bachillerato
+}
+
 final class Inscripciones: Model, Content {
     static let schema = "inscripciones"
 
@@ -11,13 +18,13 @@ final class Inscripciones: Model, Content {
     var id: Int?
 
     @Parent(key: "alumno_id")
-    var alumno_id: Alumnos
+    var alumnoId: Alumnos
 
     @Field(key: "ciclo_escolar")
-    var ciclo_escolar: String
+    var cicloEscolar: String
 
-    @Field(key: "seccion")
-    var seccion: String
+    @Enum(key: "seccion")
+    var seccion: Seccion
 
     @Field(key: "grado")
     var grado: String
@@ -26,30 +33,30 @@ final class Inscripciones: Model, Content {
     var domicilio: String
 
     @Field(key: "emergencia_tel")
-    var emergencia_tel: String
+    var emergenciaTel: String
 
     @Field(key: "fecha_registro")
-    var fecha_registro: Date
+    var fechaRegistro: Date
 
     init() {}
 
     init(
         id: Int? = nil,
-        alumno_id: Alumnos,
-        ciclo_escolar: String,
-        seccion: String,
+        alumnoId: Int,
+        cicloEscolar: String,
+        seccion: Seccion,
         grado: String,
         domicilio: String,
-        emergencia_tel: String,
-        fecha_registro: Date
+        emergenciaTel: String,
+        fechaRegistro: Date
     ) {
         self.id = id
-        self.alumno_id = alumno_id
-        self.ciclo_escolar = ciclo_escolar
+        self.$alumnoId.id = alumnoId
+        self.cicloEscolar = cicloEscolar
         self.seccion = seccion
         self.grado = grado
         self.domicilio = domicilio
-        self.emergencia_tel = emergencia_tel
-        self.fecha_registro = fecha_registro
+        self.emergenciaTel = emergenciaTel
+        self.fechaRegistro = fechaRegistro
     }
 }

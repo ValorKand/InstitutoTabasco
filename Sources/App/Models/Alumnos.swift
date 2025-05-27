@@ -14,13 +14,13 @@ final class Alumnos: Model, Content {
     var nombre: String
 
     @Field(key: "apellido_paterno")
-    var apellido_paterno: String
+    var apellidoPaterno: String
 
     @Field(key: "apellido_materno")
-    var apellido_materno: String
+    var apellidoMaterno: String
 
     @Field(key: "fecha_nacimiento")
-    var fecha_nacimiento: Date
+    var fechaNacimiento: Date
 
     @Field(key: "curp")
     var curp: String
@@ -30,16 +30,16 @@ final class Alumnos: Model, Content {
     init(
         id: Int? = nil,
         nombre: String,
-        apellido_paterno: String,
-        apellido_materno: String,
-        fecha_nacimiento: Date,
+        apellidoPaterno: String,
+        apellidoMaterno: String,
+        fechaNacimiento: Date,
         curp: String
     ) {
         self.id = id
         self.nombre = nombre
-        self.apellido_paterno = apellido_paterno
-        self.apellido_materno = apellido_materno
-        self.fecha_nacimiento = fecha_nacimiento
+        self.apellidoPaterno = apellidoPaterno
+        self.apellidoMaterno = apellidoMaterno
+        self.fechaNacimiento = fechaNacimiento
         self.curp = curp
     }
 }

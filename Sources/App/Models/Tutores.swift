@@ -4,6 +4,12 @@
 import Fluent
 import Vapor
 
+enum Parentesco: String, Codable, CaseIterable {
+    case madre
+    case padre
+    case tutor
+}
+
 final class Tutores: Model, Content {
     static let schema = "tutores"
 
@@ -11,19 +17,19 @@ final class Tutores: Model, Content {
     var id: Int?
 
     @Parent(key: "alumno_id")
-    var alumno_id: Alumnos
+    var alumnoId: Alumnos
 
-    @Field(key: "parentesco")
-    var parentesco: String
+    @Enum(key: "parentesco")
+    var parentesco: Parentesco
 
     @Field(key: "nombre")
     var nombre: String
 
     @Field(key: "apellido_paterno")
-    var apellido_paterno: String
+    var apellidoPaterno: String
 
     @Field(key: "apellido_materno")
-    var apellido_materno: String
+    var apellidoMaterno: String
 
     @Field(key: "curp")
     var curp: String
@@ -35,36 +41,36 @@ final class Tutores: Model, Content {
     var correo: String
 
     @Field(key: "es_tutor")
-    var es_tutor: Bool
+    var esTutor: Bool
 
     @Field(key: "es_pagador")
-    var es_pagador: Bool
+    var esPagador: Bool
 
     init() {}
 
     init(
         id: Int? = nil,
-        alumno_id: Alumnos,
-        parentesco: String,
+        alumnoId: Int,
+        parentesco: Parentesco,
         nombre: String,
-        apellido_paterno: String,
-        apellido_materno: String,
+        apellidoPaterno: String,
+        apellidoMaterno: String,
         curp: String,
         telefono: String,
         correo: String,
-        es_tutor: Bool,
-        es_pagador: Bool
+        esTutor: Bool,
+        esPagador: Bool
     ) {
         self.id = id
-        self.alumno_id = alumno_id
+        self.$alumnoId.id = alumnoId
         self.parentesco = parentesco
         self.nombre = nombre
-        self.apellido_paterno = apellido_paterno
-        self.apellido_materno = apellido_materno
+        self.apellidoPaterno = apellidoPaterno
+        self.apellidoMaterno = apellidoMaterno
         self.curp = curp
         self.telefono = telefono
         self.correo = correo
-        self.es_tutor = es_tutor
-        self.es_pagador = es_pagador
+        self.esTutor = esTutor
+        self.esPagador = esPagador
     }
 }

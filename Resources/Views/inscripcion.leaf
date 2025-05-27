@@ -43,7 +43,7 @@
                                     <div class="field">
                                         <label>Ciclo Escolar</label>
                                         <div class="ui left input">
-                                            <input type="text" name="ciclo_escolar" placeholder="2024-2025">
+                                            <input type="text" name="cicloEscolar" placeholder="2024-2025">
                                         </div>
                                     </div>
                                     <div class="field">
@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="field">
                                         <label>Grado a cursar</label>
-                                        <select type="select" id="año_cursara" name="año_cursara" placeholder="Selecciona un grado" disabled>
+                                        <select type="select" id="grado" name="grado" placeholder="Selecciona un grado" disabled>
                                             <option value="nulo">Selecciona un grado</option>
                                         </select>
                                     </div>
@@ -71,25 +71,25 @@
                                     <div class="field">
                                         <label>Nombre(s)</label>
                                         <div class="ui left input">
-                                            <input type="text" name="alumno_nombre" placeholder="Luis Fernando">
+                                            <input type="text" name="alumnoNombre" placeholder="Luis Fernando">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido paterno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="alumno_apellido_paterno" placeholder="García">
+                                            <input type="text" name="alumnoApellidoPaterno" placeholder="García">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido materno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="alumno_apellido_materno" placeholder="Méndez">
+                                            <input type="text" name="alumnoApellidoMaterno" placeholder="Méndez">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Fecha de nacimiento</label>
                                         <div class="ui left input">
-                                            <input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento">
+                                            <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento">
                                         </div>
                                     </div>
                                     <div class="field">
@@ -105,25 +105,25 @@
                                     <div class="field">
                                         <label>Nombre(s)</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madre_nombre" placeholder="Daniela">
+                                            <input type="text" name="madreNombre" placeholder="Daniela">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido paterno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madre_apellido_paterno" placeholder="Carrasco">
+                                            <input type="text" name="madreApellidoPaterno" placeholder="Carrasco">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido materno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madre_apellido_materno" placeholder="Bautista">
+                                            <input type="text" name="madreApellidoMaterno" placeholder="Bautista">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>CURP</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madre_curp" placeholder="CURP">
+                                            <input type="text" name="madreCurp" placeholder="CURP">
                                         </div>
                                     </div>
                                 </div>
@@ -131,24 +131,24 @@
                                     <div class="field">
                                         <label>Número de teléfono</label>
                                         <div class="ui left input">
-                                            <input type="tel" name="madre_telefono" placeholder="9933128843">
+                                            <input type="tel" name="madreTelefono" placeholder="9933128843">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Correo</label>
                                         <div class="ui left input">
-                                            <input type="email" name="madre_correo" placeholder="ejemplo@icloud.com">
+                                            <input type="email" name="madreCorreo" placeholder="ejemplo@icloud.com">
                                         </div>
                                     </div>
                                     <div class="two wide field">
                                         <div class="ui checkbox">
-                                            <input type="checkbox" name="madre_es_tutor">
+                                            <input type="checkbox" name="madreEsTutor">
                                             <label>¿Es tutor?</label>
                                         </div>
                                     </div>
                                     <div class="two wide field">
                                         <div class="ui checkbox">
-                                            <input type="checkbox" name="madre_pagador">
+                                            <input type="checkbox" name="madreEsPagador">
                                             <label>¿Es pagador?</label>
                                         </div>
                                     </div>
@@ -159,25 +159,25 @@
                                     <div class="field">
                                         <label>Nombre(s)</label>
                                         <div class="ui left input">
-                                            <input type="text" name="padre_nombre" placeholder="Rufino del Cármen">
+                                            <input type="text" name="padreNombre" placeholder="Rufino del Cármen">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido paterno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="padre_apellido_paterno" placeholder="Arellanes">
+                                            <input type="text" name="padreApellidoPaterno" placeholder="Arellanes">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido materno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="padre_apellido_materno" placeholder="Tamayo">
+                                            <input type="text" name="padreApellidoMaterno" placeholder="Tamayo">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>CURP</label>
                                         <div class="ui left input">
-                                            <input type="text" name="padre_curp" placeholder="CURP">
+                                            <input type="text" name="padreCurp" placeholder="CURP">
                                         </div>
                                     </div>
                                 </div>
@@ -185,24 +185,24 @@
                                     <div class="field">
                                         <label>Número de teléfono</label>
                                         <div class="ui left input">
-                                            <input type="tel" name="padre_telefono" placeholder="9933231254">
+                                            <input type="tel" name="padreTelefono" placeholder="9933231254">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Correo</label>
                                         <div class="ui left input">
-                                            <input type="email" name="padre_correo" placeholder="ejemplo@icloud.com">
+                                            <input type="email" name="padreCorreo" placeholder="ejemplo@icloud.com">
                                         </div>
                                     </div>
                                     <div class="two wide field">
                                         <div class="ui checkbox">
-                                            <input type="checkbox" id="padre_es_tutor" name="es_tutor">
+                                            <input type="checkbox" name="padreEsTutor">
                                             <label>¿Es tutor?</label>
                                         </div>
                                     </div>
                                     <div class="two wide field">
                                         <div class="ui checkbox">
-                                            <input type="checkbox" name="padre_pagador">
+                                            <input type="checkbox" name="padreEsPagador">
                                             <label>¿Es pagador?</label>
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@
                                     <div class="field">
                                         <label>En caso de emergencia, llamar a</label>
                                         <div class="ui left input">
-                                            <input type="tel" name="telefono_emergencia" placeholder="911">
+                                            <input type="tel" name="emergenciaTel" placeholder="911">
                                         </div>
                                     </div>
                                     <div class="field">
