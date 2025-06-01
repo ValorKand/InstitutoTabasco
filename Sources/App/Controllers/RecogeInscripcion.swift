@@ -1,5 +1,5 @@
-// RecojeInscripcion.swift
-// Recoje del formulario los datos de la inscripcion (alumno, tutor, ciclo escolar, todo.)
+// RecogeInscripcion.swift
+// Recoge del formulario los datos de la inscripcion (alumno, tutor, ciclo escolar, todo.)
 
 import Vapor
 
