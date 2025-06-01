@@ -25,35 +25,20 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
         try await alumno.create(on: db)
 
         // OJO: parentesco es booleano, verdadero = madre, falso = padre
-        // 2. Registrar Mamá
-        let madre = Tutores(
+        // 2. Registrar Tutor
+        let tutor = Tutores(
             alumnoId: alumno.id!,
             parentesco: .madre,
-            nombre: registro.madreNombre,
-            apellidoPaterno: registro.madreApellidoPaterno,
-            apellidoMaterno: registro.madreApellidoMaterno,
+            nombre: registro.tutorNombre,
+            apellidoPaterno: registro.tutorApellidoPaterno,
+            apellidoMaterno: registro.tutorApellidoMaterno,
             curp: registro.curp,
-            telefono: registro.madreTelefono,
-            correo: registro.madreCorreo,
-            esTutor: registro.madreEsTutor,
-            esPagador: registro.madreEsPagador,
+            telefono: registro.tutorTelefono,
+            correo: registro.tutorCorreo,
+            esTutor: registro.quienEsTutor,
+            esPagador: registro.quienEsPagador,
         )
-        try await madre.create(on: db)
-
-        // 3. Registrar Papá
-        let padre = Tutores(
-            alumnoId: alumno.id!,
-            parentesco: .padre,
-            nombre: registro.padreNombre,
-            apellidoPaterno: registro.padreApellidoPaterno,
-            apellidoMaterno: registro.padreApellidoMaterno,
-            curp: registro.curp,
-            telefono: registro.padreTelefono,
-            correo: registro.padreCorreo,
-            esTutor: registro.padreEsTutor,
-            esPagador: registro.padreEsPagador,
-        )
-        try await padre.create(on: db)
+        try await tutor.create(on: db)
 
         // 4. Registro de Inscripción
         let inscripcion = Inscripciones(

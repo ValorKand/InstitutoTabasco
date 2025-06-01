@@ -100,30 +100,30 @@
                                     </div>
                                 </div>
                                 <!-- datos de tutor -->
-                                <div class="ui left aligned dividing header">Datos de mamá 👩</div>
+                                <div class="ui left aligned dividing header">Datos del Tutor 👩🧑</div>
                                 <div class="four fields">
                                     <div class="field">
                                         <label>Nombre(s)</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madreNombre" placeholder="Daniela">
+                                            <input type="text" name="tutorNombre" placeholder="Daniela">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido paterno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madreApellidoPaterno" placeholder="Carrasco">
+                                            <input type="text" name="tutorApellidoPaterno" placeholder="Carrasco">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Apellido materno</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madreApellidoMaterno" placeholder="Bautista">
+                                            <input type="text" name="tutorApellidoMaterno" placeholder="Bautista">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>CURP</label>
                                         <div class="ui left input">
-                                            <input type="text" name="madreCurp" placeholder="CURP">
+                                            <input type="text" name="tutorCurp" placeholder="CURP">
                                         </div>
                                     </div>
                                 </div>
@@ -142,71 +142,18 @@
                                     </div>
                                     <div class="two wide field">
                                         <div class="ui checkbox">
-                                            <input type="checkbox" name="madreEsTutor">
+                                            <input type="checkbox" name="quienEsTutor">
                                             <label>¿Es tutor?</label>
                                         </div>
                                     </div>
                                     <div class="two wide field">
                                         <div class="ui checkbox">
-                                            <input type="checkbox" name="madreEsPagador">
+                                            <input type="checkbox" name="quienEsPagador">
                                             <label>¿Es pagador?</label>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- padre -->
-                                <div class="ui left aligned dividing header">Datos de papá 🧑</div>
-                                <div class="four fields">
-                                    <div class="field">
-                                        <label>Nombre(s)</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="padreNombre" placeholder="Rufino del Cármen">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Apellido paterno</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="padreApellidoPaterno" placeholder="Arellanes">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Apellido materno</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="padreApellidoMaterno" placeholder="Tamayo">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>CURP</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="padreCurp" placeholder="CURP">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="three fields">
-                                    <div class="field">
-                                        <label>Número de teléfono</label>
-                                        <div class="ui left input">
-                                            <input type="tel" name="padreTelefono" placeholder="9933231254">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Correo</label>
-                                        <div class="ui left input">
-                                            <input type="email" name="padreCorreo" placeholder="ejemplo@icloud.com">
-                                        </div>
-                                    </div>
-                                    <div class="two wide field">
-                                        <div class="ui checkbox">
-                                            <input type="checkbox" name="padreEsTutor">
-                                            <label>¿Es tutor?</label>
-                                        </div>
-                                    </div>
-                                    <div class="two wide field">
-                                        <div class="ui checkbox">
-                                            <input type="checkbox" name="padreEsPagador">
-                                            <label>¿Es pagador?</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- otros datos -->
                                 <div class="ui left aligned dividing header">Otros datos 📲</div>
                                 <div class="two fields">
                                     <div class="field">
