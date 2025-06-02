@@ -5,8 +5,8 @@ $(document).ready(function () {
         on: "blur", // Valida al salir de cada campo
         // Datos del alumno
         fields: {
-            ciclo_escolar: {
-                identifier: "ciclo_escolar",
+            cicloEscolar: {
+                identifier: "cicloEscolar",
                 rules: [
                     {
                         type: "empty",
@@ -37,8 +37,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            alumno_nombre: {
-                identifier: "alumno_nombre",
+            alumnoNombre: {
+                identifier: "alumnoNombre",
                 rules: [
                     {
                         type: "empty",
@@ -50,8 +50,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            alumno_apellido_paterno: {
-                identifier: "alumno_apellido_paterno",
+            alumnoApellidoPaterno: {
+                identifier: "alumnoApellidoPaterno",
                 rules: [
                     {
                         type: "empty",
@@ -59,8 +59,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            alumno_apellido_materno: {
-                identifier: "alumno_apellido_materno",
+            alumnoApellidoMaterno: {
+                identifier: "alumnoApellidoMaterno",
                 rules: [
                     {
                         type: "empty",
@@ -68,8 +68,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            fecha_nacimiento: {
-                identifier: "fecha_nacimiento",
+            fechaNacimiento: {
+                identifier: "fechaNacimiento",
                 rules: [
                     {
                         type: "empty",
@@ -86,8 +86,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            //Datos de la madre
-            madre_nombre: {
+            //Datos de tutor
+            tutorNombre: {
                 identifier: "madre_nombre",
                 rules: [
                     {
@@ -100,8 +100,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            madre_apellido_paterno: {
-                identifier: "madre_apellido_paterno",
+            tutorApellidoPaterno: {
+                identifier: "tutorApellidoPaterno",
                 rules: [
                     {
                         type: "empty",
@@ -109,8 +109,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            madre_apellido_materno: {
-                identifier: "madre_apellido_materno",
+            tutorApellidoMaterno: {
+                identifier: "tutorApellidoMaterno",
                 rules: [
                     {
                         type: "empty",
@@ -118,8 +118,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            madre_telefono: {
-                identifier: "madre_telefono",
+            tutorTelefono: {
+                identifier: "tutorTelefono",
                 rules: [
                     {
                         type: "empty",
@@ -132,8 +132,8 @@ $(document).ready(function () {
                     },
                 ],
             },
-            madre_correo: {
-                identifier: "madre_correo",
+            tutorCorreo: {
+                identifier: "tutorCorreo",
                 rules: [
                     {
                         type: "email",
@@ -168,61 +168,6 @@ $(document).ready(function () {
                     },
                 ],
                 },*/
-            //Datos del padre
-            padre_nombre: {
-                identifier: "padre_nombre",
-                rules: [
-                    {
-                        type: "empty",
-                        prompt: "Ingrese el nombre del padre",
-                    },
-                    {
-                        type: "minLength[2]",
-                        prompt: "El nombre de papá debe tener al menos 2 caracteres",
-                    },
-                ],
-            },
-            padre_apellido_paterno: {
-                identifier: "padre_apellido_paterno",
-                rules: [
-                    {
-                        type: "empty",
-                        prompt: "Ingrese el apellido paterno de papá",
-                    },
-                ],
-            },
-            padre_apellido_materno: {
-                identifier: "padre_apellido_materno",
-                rules: [
-                    {
-                        type: "empty",
-                        prompt: "Ingrese el apellido materno de papá",
-                    },
-                ],
-            },
-            padre_telefono: {
-                identifier: "padre_telefono",
-                rules: [
-                    {
-                        type: "empty",
-                        prompt: "Ingrese el número de teléfono",
-                    },
-                    {
-                        type: "regExp",
-                        value: /^[0-9]{10}$/,
-                        prompt: "El número de teléfono debe tener 10 dígitos",
-                    },
-                ],
-            },
-            padre_correo: {
-                identifier: "padre_correo",
-                rules: [
-                    {
-                        type: "email",
-                        prompt: "Ingrese un correo electrónico válido",
-                    },
-                ],
-            },
             //Igual, otra funcion que parece que no quiere hacer su trabajo.
             /*
             padre_es_tutor: {

@@ -12,6 +12,15 @@ $(document).ready(function () {
     // checkbox
     $(".ui.checkbox").checkbox();
 
+    // Lógica para mostrar u ocultar el div
+    $('#esPagador').on('change', function () {
+        if ($(this).is(':checked')) {
+            $('#pagador').fadeOut(); // Puedes usar .show() si no quieres animación
+        } else {
+            $('#pagador').fadeIn();
+        }
+    });
+
     // Definir las opciones para cada sección
     const secciones = {
         preescolar: ["1ro", "2do", "3ro"],
@@ -32,7 +41,7 @@ $(document).ready(function () {
 
         // Obtener los select con jQuery
         const $seccionSelect = $("#seccion");
-        const $gradoSelect = $("#año_cursara");
+        const $gradoSelect = $("#grado");
 
         // Escuchar cambios en el primer select
         $seccionSelect.on("change", function () {

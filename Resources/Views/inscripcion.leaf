@@ -128,28 +128,78 @@
                                     </div>
                                 </div>
                                 <div class="three fields">
-                                    <div class="field">
+                                    <div class="three wide field">
                                         <label>Número de teléfono</label>
                                         <div class="ui left input">
-                                            <input type="tel" name="madreTelefono" placeholder="9933128843">
+                                            <input type="tel" name="tutorTelefono" placeholder="9933128843">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label>Correo</label>
                                         <div class="ui left input">
-                                            <input type="email" name="madreCorreo" placeholder="ejemplo@icloud.com">
+                                            <input type="email" name="tutorCorreo" placeholder="ejemplo@icloud.com">
                                         </div>
                                     </div>
                                     <div class="two wide field">
-                                        <div class="ui checkbox">
-                                            <input type="checkbox" name="quienEsTutor">
-                                            <label>¿Es tutor?</label>
+                                        <!--seleccion de parentesco -->
+                                        <label>¿Tutor es?</label>
+                                        <div class="ui left input">
+                                            <select type="select" id="parentesco" name="parentesco" placeholder="¿Tutor es?">
+                                                <option value="nulo">Selecciona una opción</option>
+                                                <option value="madre">Madre</option>
+                                                <option value="padre">Padre</option>
+                                                <option value="otro">Otro</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="two wide field">
-                                        <div class="ui checkbox">
-                                            <input type="checkbox" name="quienEsPagador">
-                                            <label>¿Es pagador?</label>
+                                    <div class="field">
+                                      <label>¿Es pagador?</label>
+                                      <div class="ui toggle checkbox">
+                                          <input id="esPagador" type="checkbox" name="esPagador" checked>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- datos de pagador, se debe ocultar y mostrar de acorde al checkbox esPagador -->
+                                <div id="pagador" style="display: none;">
+                                    <div class="ui left aligned dividing header">Datos del Pagador 💵💶</div>
+                                    <div class="four fields">
+                                        <div class="field">
+                                            <label>Nombre(s)</label>
+                                            <div class="ui left input">
+                                                <input type="text" name="pagadorNombre" placeholder="Daniela">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Apellido paterno</label>
+                                            <div class="ui left input">
+                                                <input type="text" name="pagadorApellidoPaterno" placeholder="Carrasco">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Apellido materno</label>
+                                            <div class="ui left input">
+                                                <input type="text" name="pagadorApellidoMaterno" placeholder="Bautista">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>CURP</label>
+                                            <div class="ui left input">
+                                                <input type="text" name="pagadorCurp" placeholder="CURP">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="three fields">
+                                        <div class="three wide field">
+                                            <label>Número de teléfono</label>
+                                            <div class="ui left input">
+                                                <input type="tel" name="pagadorTelefono" placeholder="9933128843">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label>Correo</label>
+                                            <div class="ui left input">
+                                                <input type="email" name="pagadorCorreo" placeholder="ejemplo@icloud.com">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

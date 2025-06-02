@@ -19,8 +19,17 @@ struct RecogeInscripcion: Decodable {
     let tutorCurp: String
     let tutorTelefono: String
     let tutorCorreo: String
-    @CheckboxBool var quienEsTutor: Bool
-    @CheckboxBool var quienEsPagador: Bool
+    let parentesco: String
+    let esPagador: Bool?
+    //@CheckboxBool var esPagador: Bool?
+
+    // Datos de pagador
+    let pagadorNombre: String?
+    let pagadorApellidoPaterno: String?
+    let pagadorApellidoMaterno: String?
+    let pagadorCurp: String?
+    let pagadorTelefono: String?
+    let pagadorCorreo: String?
 
     //Datos de inscripción
     let cicloEscolar: String
