@@ -13,6 +13,37 @@
         <title>#(title)</title>
     </head>
     <body id="root">
+        <!-- Modal (aviso emergente) de responsabilidad de tutor -->
+        <div id="tutorModal" class="ui small modal">
+            <div class="header">🚨 AVISO IMPORTANTE AL TUTOR LEGAL 🚨</div>
+            <div class="justificado content">
+                <p>
+                    Por medio del presente, se informa que el <b>tutor</b> registrado en este
+                    y en cualquier otro proceso de inscripción será considerado el responsable directo
+                    el alumno dentro de la institución, y en consecuencia:
+                    <ul>
+                        <li>
+                            Recibirá todas las notificaciones oficiales relacionadas con el alumno.
+                        </li>
+                        <li>
+                            Será responsable de atender cualquier asunto académico, administrativo o disciplinario que involucre al menor.
+                        </li>
+                        <li>
+                            Asumirá el compromiso de dar seguimiento a la situación escolar del alumno durante el ciclo vigente.
+                        </li>
+                        <li>
+                            Agradecemos su comprensión y compromiso con la formación del alumno.
+                        </li>
+                    </ul>
+                    Atentamente, Instituto Tabasco.
+                </p>
+            </div>
+            <div class="actions">
+                <button id="continuarRegistro" class="ui right floated possitive green button">Acepto el acuerdo y continuar con el registro</button>
+                <button id="cancelarRegistro" onclick="window.location.href='/'" class="ui right floated deny button">Cancelar y regresar</button>
+            </div>
+            <div class="ui hidden divider"></div>
+        </div>
         <div class="computer only ui grid">
             <div class="ui top fixed borderless menu">
                 <div class="item">

@@ -21,6 +21,22 @@ $(document).ready(function () {
         }
     });
 
+    //mostrar siempre modal de responsabilidad de tutor
+    $("#tutorModal").modal({closable: false}).modal("show");
+
+    //acciones acorde a los botones del modal tutorModal
+    //continua con el registro
+    $("#continuarRegistro").click(function () {
+        $("#tutorModal").modal("hide");
+    });
+
+    //regresa al inicio
+
+    //mostrar modal de privacidad
+    $("#avisoPrivacidad").click(function () {
+        $("#privacidad").modal("show");
+    });
+
     // Definir las opciones para cada sección
     const secciones = {
         preescolar: ["1ro", "2do", "3ro"],

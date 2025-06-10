@@ -1,6 +1,6 @@
 // RegistraInscripcion.swift
 // Registra el proceso de inscripcion a la base de datos en tablas alumnos, tutores, inscripciones, historial_movimientos
-// TODO: terminar esto, hay que compioner los registros, y con esto se supone que debería funcionar :c
+// TODO: ya funciona, solo hay que afinar detalles jijiji
 
 import Fluent
 import Vapor
@@ -31,7 +31,8 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
         // 2. Registrar Tutor dependiendo de si se marcó si es pagador o no
         // Si el tutor es pagador:
         if let esPagador = registro.esPagador, esPagador {
-    		// Tutor es pagador
+    			// Tutor es pagador
+
     			let tutor = Tutores(
         			alumnoId: alumno.id!,
         			parentesco: parentescoEnum,
@@ -43,21 +44,21 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
         			correo: registro.tutorCorreo,
         			esPagador: true
     			)
-    		try await tutor.create(on: db)
+    			try await tutor.create(on: db)
 
 		} else {
 			// Tutor NO es pagador: se registra tutor + pagador
 
 			let tutor = Tutores(
-		    	alumnoId: alumno.id!,
-		    	parentesco: parentescoEnum,
-		    	nombre: registro.tutorNombre,
-		    	apellidoPaterno: registro.tutorApellidoPaterno,
-		    	apellidoMaterno: registro.tutorApellidoMaterno,
-			curp: registro.tutorCurp,
-		    	telefono: registro.tutorTelefono,
-		    	correo: registro.tutorCorreo,
-		    	esPagador: false
+		    		alumnoId: alumno.id!,
+		    		parentesco: parentescoEnum,
+		    		nombre: registro.tutorNombre,
+		    		apellidoPaterno: registro.tutorApellidoPaterno,
+		    		apellidoMaterno: registro.tutorApellidoMaterno,
+				curp: registro.tutorCurp,
+		    		telefono: registro.tutorTelefono,
+		    		correo: registro.tutorCorreo,
+		    		esPagador: false
 			)
 			try await tutor.create(on: db)
 
