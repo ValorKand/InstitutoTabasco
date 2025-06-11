@@ -62,6 +62,7 @@
                 text-align: right;
                 font-style: italic;
                 color: #666;
+                padding-right: 20%;
             }
 
             #datosEscuela{
