@@ -1,5 +1,6 @@
 // Pagador.swift
 // Modelo de registro a base de datos de la tabla pagadores
+// Los nombres en los modelos tienen que ser a como están en la base de datos
 
 import Fluent
 import Vapor
@@ -31,6 +32,9 @@ final class Pagadores: Model, Content {
     @Field(key: "correo")
     var correo: String
 
+    @Field(key: "rfc")
+    var rfc: String
+
     init() {}
 
     init(
@@ -42,6 +46,7 @@ final class Pagadores: Model, Content {
         curp: String,
         telefono: String,
         correo: String,
+        rfc: String,
     ) {
         self.id = id
         self.$alumnoId.id = alumnoId
@@ -51,5 +56,6 @@ final class Pagadores: Model, Content {
         self.curp = curp
         self.telefono = telefono
         self.correo = correo
+        self.rfc = rfc
     }
 }

@@ -43,6 +43,9 @@ final class Tutores: Model, Content {
     @Field(key: "es_pagador")
     var esPagador: Bool?
 
+    @Field(key: "rfc")
+    var rfc: String
+
     init() {}
 
     init(
@@ -55,7 +58,8 @@ final class Tutores: Model, Content {
         curp: String,
         telefono: String,
         correo: String,
-        esPagador: Bool
+        esPagador: Bool,
+        rfc: String
     ) {
         self.id = id
         self.$alumnoId.id = alumnoId
@@ -67,5 +71,6 @@ final class Tutores: Model, Content {
         self.telefono = telefono
         self.correo = correo
         self.esPagador = esPagador
+        self.rfc = rfc
     }
 }

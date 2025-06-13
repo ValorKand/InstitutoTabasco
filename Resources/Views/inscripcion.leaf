@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Este es el formulario de registro de inscripciones, .leaf, para más comodidad y placer -->
 <html lang="es-mx">
     <head>
         <meta charset="utf-8"/>
@@ -159,6 +160,12 @@
                                     </div>
                                 </div>
                                 <div class="three fields">
+                                    <div class="field">
+                                        <label>RFC</label>
+                                        <div class="ui left input">
+                                            <input type="text" name="tutorRfc" placeholder="rfc">
+                                        </div>
+                                    </div>
                                     <div class="three wide field">
                                         <label>Número de teléfono</label>
                                         <div class="ui left input">
@@ -220,6 +227,12 @@
                                         </div>
                                     </div>
                                     <div class="three fields">
+                                        <div class="field">
+                                            <label>RFC</label>
+                                            <div class="ui left input">
+                                                <input type="text" name="pagadorRfc" placeholder="rfc">
+                                            </div>
+                                        </div>
                                         <div class="three wide field">
                                             <label>Número de teléfono</label>
                                             <div class="ui left input">

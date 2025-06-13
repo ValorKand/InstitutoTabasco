@@ -8,6 +8,10 @@ import Vapor
 func registrarInscripcion(req: Request) async throws -> HTTPStatus {
     let registro = try req.content.decode(RecogeInscripcion.self)
 
+    //Verificar si el marcador de pagador esta activado o no
+    let esPagadorRaw = registro.esPagador
+	let esPagador = esPagadorRaw == "true" || esPagadorRaw == "on"
+
     guard let seccionEnum = Seccion(rawValue: registro.seccion) else {
         throw Abort(.badRequest, reason: "Sección inválida: \(registro.seccion)")
     }
@@ -23,14 +27,14 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
             apellidoPaterno: registro.alumnoApellidoPaterno,
             apellidoMaterno: registro.alumnoApellidoMaterno,
             fechaNacimiento: registro.fechaNacimiento,
-            //edad: registro.edad,
             curp: registro.curp
         )
         try await alumno.create(on: db)
 
         // 2. Registrar Tutor dependiendo de si se marcó si es pagador o no
         // Si el tutor es pagador:
-        if let esPagador = registro.esPagador, esPagador {
+        // if let esPagador = registro.esPagador, esPagador <– anterior
+        if esPagador {
     			// Tutor es pagador
 
     			let tutor = Tutores(
@@ -42,7 +46,8 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
         			curp: registro.tutorCurp,
         			telefono: registro.tutorTelefono,
         			correo: registro.tutorCorreo,
-        			esPagador: true
+        			esPagador: true,
+        			rfc: registro.tutorRfc
     			)
     			try await tutor.create(on: db)
 
@@ -58,7 +63,8 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
 				curp: registro.tutorCurp,
 		    		telefono: registro.tutorTelefono,
 		    		correo: registro.tutorCorreo,
-		    		esPagador: false
+		    		esPagador: false,
+		    		rfc: registro.tutorRfc
 			)
 			try await tutor.create(on: db)
 
@@ -68,7 +74,8 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
             let apellidoMaterno = registro.pagadorApellidoMaterno,
             let curp = registro.pagadorCurp,
             let telefono = registro.pagadorTelefono,
-            let correo = registro.pagadorCorreo else {
+            let correo = registro.pagadorCorreo,
+            let rfc = registro.pagadorRfc else {
         		throw Abort(.badRequest, reason: "Faltan datos del pagador.")
     		}
 
@@ -79,7 +86,8 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
     			apellidoMaterno: registro.pagadorApellidoMaterno ?? "",
     			curp: registro.pagadorCurp ?? "",
     			telefono: registro.pagadorTelefono ?? "",
-    			correo: registro.pagadorCorreo ?? ""
+    			correo: registro.pagadorCorreo ?? "",
+    			rfc: registro.pagadorRfc ?? ""
     		)
     		try await pagador.create(on: db)
 		}

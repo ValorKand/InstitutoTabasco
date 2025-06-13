@@ -20,8 +20,8 @@ struct RecogeInscripcion: Decodable {
     let tutorTelefono: String
     let tutorCorreo: String
     let parentesco: String
-    let esPagador: Bool?
-    //@CheckboxBool var esPagador: Bool?
+    let esPagador: String?
+    let tutorRfc: String
 
     // Datos de pagador
     let pagadorNombre: String?
@@ -30,6 +30,7 @@ struct RecogeInscripcion: Decodable {
     let pagadorCurp: String?
     let pagadorTelefono: String?
     let pagadorCorreo: String?
+    let pagadorRfc: String?
 
     //Datos de inscripción
     let cicloEscolar: String
