@@ -30,6 +30,10 @@ final class Alumnos: Model, Content {
     @Field(key: "curp")
     var curp: String
 
+    //	Para la relación de alumno y tutorp3
+    @Children(for: \.$alumnoId)
+    var tutores: [Tutores]
+
     init() {}
 
     init(

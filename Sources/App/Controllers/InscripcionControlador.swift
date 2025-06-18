@@ -8,24 +8,6 @@
 import Vapor
 import Fluent
 
-/*func mostrarInscripcion(req: Request) async throws -> View {
-    guard let alumnoID = req.parameters.get("alumnoID", as: Int.self) else {
-        throw Abort(.badRequest)
-    }
-
-    guard let alumno = try await Alumnos.find(alumnoID, on: req.db) else {
-		throw Abort(.notFound)
-	}
-
-    struct InscripcionContextop3: Encodable {
-        let alumno: Alumnos
-    }
-
-    let contextop3 = InscripcionContextop3(alumno: alumno)
-
-    return try await req.view.render("inscripcion", contextop3)
-}*/
-
 // Función para mostrar la vista en pdf
 func mostrarInscripcionPDF(req: Request) async throws -> Response {
     guard let alumnoID = req.parameters.get("alumnoID", as: Int.self),
@@ -43,6 +25,11 @@ func mostrarInscripcionPDF(req: Request) async throws -> Response {
 
     // Generar PDF
     let pdf = try await hacerPDF(alumno: alumno, html: html, req: req)
+
+    // Enviar el correo en segundo plano (opcional si no quieres bloquear al usuario)
+	Task {
+		try? await enviarCorreoInscripcionExitosa(req: req, alumno: alumno)
+	}
 
     return Response(
         status: .ok,
