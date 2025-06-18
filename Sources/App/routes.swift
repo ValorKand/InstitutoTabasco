@@ -17,9 +17,11 @@ func routes(_ app: Application) throws {
 
     app.post("registraInscripcion", use: registrarInscripcion)
 
-    app.get("inscripcion", ":alumnoID") { req async throws in
-		try await mostrarInscripcion(req: req)
-	}
+    /*app.get("inscripcion", ":alumnoID") { req async throws in
+		try await mostrarInscripcionPDF(req: req)
+	}*/
+	app.get("inscripcion", ":alumnoID", use: mostrarInscripcionPDF)
+
 
 	//Esto es solo para probar si funciona el envío de correo
 	app.get("probarCorreo") { req async throws -> String in
