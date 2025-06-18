@@ -1,4 +1,4 @@
-//validaFecha.js
+//validaFecha.js – Para validar la fecha
 document
     .querySelector("form")
     .addEventListener("submit", async function (event) {
@@ -11,11 +11,23 @@ document
             jsonData[key] = value;
         });
 
-        await fetch("/registraInscripcion", {
+        // Descomentar si es necesario
+        /*await fetch("/registraInscripcion", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(jsonData),
+        });*/
+        const response = await fetch("/registraInscripcion", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(jsonData),
         });
+
+        if (response.redirected) {
+            window.location.href = response.url;
+        }
     });

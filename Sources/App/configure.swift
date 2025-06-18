@@ -40,6 +40,9 @@ public func configure(_ app: Application) async throws {
 
     app.views.use(.leaf)
 
+	//se registra el controlador del pdf a la vistap3
+	//try app.register(collection: PruebaPDF())
+
     // register routes
     try routes(app)
 }

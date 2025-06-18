@@ -1,4 +1,9 @@
-// Alumnos.swift
+//
+//  Alumnos.swift
+//  InstitutoTabasco
+//
+//  Creado por Vales Corp en dd?/06/25.
+//
 // Modelo de registro a base de datos de la tabla alumno
 
 import Fluent

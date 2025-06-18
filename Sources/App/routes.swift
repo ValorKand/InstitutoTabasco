@@ -1,5 +1,6 @@
 import Fluent
 import Vapor
+import Leaf
 
 func routes(_ app: Application) throws {
     app.get { req async throws in
@@ -10,11 +11,15 @@ func routes(_ app: Application) throws {
         "¡Fieles al Deber!"
     }
 
-    app.get("inscripcion.leaf") { req async throws -> View in
-        try await req.view.render("inscripcion", ["title": "Instituto Tabasco – Inscripciones"])
+    app.get("formularioInscripcion.leaf") { req async throws -> View in
+        try await req.view.render("formularioInscripcion", ["title": "Instituto Tabasco – Inscripciones"])
     }
 
     app.post("registraInscripcion", use: registrarInscripcion)
+
+    app.get("inscripcion", ":alumnoID") { req async throws in
+		try await mostrarInscripcion(req: req)
+	}
 
 	//Esto es solo para probar si funciona el envío de correo
 	app.get("probarCorreo") { req async throws -> String in
@@ -26,6 +31,21 @@ func routes(_ app: Application) throws {
     		)
     		return "Correo enviado correctamente 💌"
 	}
+
+	app.get("inscripcionPlantillaVacia") { req async throws -> View in
+		return try await req.view.render("inscripcion")
+	}
+
+	//Probar contextos y plantillas
+	app.get("pruebaLeaf") { req async throws -> View in
+
+		struct SimpleContext: Encodable {
+			let saludo: String
+		}
+
+        let contexto = SimpleContext(saludo: "Hola desde Leaf!")
+        return try await req.view.render("prueba", contexto)
+    }
 
     try app.register(collection: TodoController())
 }

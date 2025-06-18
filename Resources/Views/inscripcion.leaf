@@ -1,308 +1,145 @@
-<!doctype html>
-<!-- Este es el formulario de registro de inscripciones, .leaf, para más comodidad y placer -->
-<html lang="es-mx">
+<!-- Esta es la plantilla para el tarjetónp3 -->
+<!DOCTYPE html>
+<html>
     <head>
-        <meta charset="utf-8"/>
-        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
-        <link type="text/css" rel="stylesheet" href="./src/semantic/semantic.css"></link>
-        <link type="text/css" rel="stylesheet" href="./src/materialsymbols/css/materialsymbols.css"></link>
-        <link type="text/css" rel="stylesheet" href="./src/css/componentes.css"></link>
-        <link type="text/css" rel="stylesheet" href="./src/css/cuerpo.css"></link>
-        <link type="text/css" rel="stylesheet" href="./src/fuentes/Matrix-Book/css/Matrix-Book.css"></link>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"/>
-        <script src="./src/js/async.js"></script>
-        <title>#(title)</title>
+        <meta charset="UTF-8"/>
+        <title>Ficha de Inscripción</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                padding: 2em;
+                font-size: 14px;
+            }
+
+            h1, h3, h4 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 1em;
+            }
+
+            .grid {
+                display: block;
+                justify-content: space-between;
+                gap: 1em;
+            }
+
+            .box {
+                flex: 1;
+                border: 1px solid #ccc;
+                padding: 1em;
+                border-radius: 8px;
+                margin-left: 15%;
+                margin-right: 15%;
+            }
+
+            .fila {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .box h2 {
+                margin-top: 0;
+                font-size: 1.1em;
+                color: #555;
+                text-align: center;
+            }
+
+            .field {
+                margin-bottom: 0.5em;
+            }
+
+            .label {
+                font-weight: bold;
+                color: #333;
+            }
+
+            .value {
+                margin-left: 0.5em;
+                color: #000;
+            }
+
+            .footer {
+                margin-top: 2em;
+                text-align: right;
+                font-style: italic;
+                color: #666;
+                padding-right: 20%;
+            }
+
+            #datosEscuela{
+                margin: auto;
+                text-align: center;
+            }
+
+            #datosEscuela th {
+                padding-left: 3em;
+                padding-right: 3em;
+            }
+        </style>
     </head>
-    <body id="root">
-        <!-- Modal (aviso emergente) de responsabilidad de tutor -->
-        <div id="tutorModal" class="ui small modal">
-            <div class="header">🚨 AVISO IMPORTANTE AL TUTOR LEGAL 🚨</div>
-            <div class="justificado content">
-                <p>
-                    Por medio del presente, se informa que el <b>tutor</b> registrado en este
-                    y en cualquier otro proceso de inscripción será considerado el responsable directo
-                    el alumno dentro de la institución, y en consecuencia:
-                    <ul>
-                        <li>
-                            Recibirá todas las notificaciones oficiales relacionadas con el alumno.
-                        </li>
-                        <li>
-                            Será responsable de atender cualquier asunto académico, administrativo o disciplinario que involucre al menor.
-                        </li>
-                        <li>
-                            Asumirá el compromiso de dar seguimiento a la situación escolar del alumno durante el ciclo vigente.
-                        </li>
-                        <li>
-                            Agradecemos su comprensión y compromiso con la formación del alumno.
-                        </li>
-                    </ul>
-                    Atentamente, Instituto Tabasco.
-                </p>
-            </div>
-            <div class="actions">
-                <button id="continuarRegistro" class="ui right floated possitive green button">Acepto el acuerdo y continuar con el registro</button>
-                <button id="cancelarRegistro" onclick="window.location.href='/'" class="ui right floated deny button">Cancelar y regresar</button>
-            </div>
-            <div class="ui hidden divider"></div>
-        </div>
-        <div class="computer only ui grid">
-            <div class="ui top fixed borderless menu">
-                <div class="item">
-                    <img src="./src/iu/logo.png"/>
-                    <span class="logo">Instituto Tabasco – Inscripciones</span>
+    <body>
+        <h1>INSTITUTO TABASCO</h1>
+        <h4>#(inscripcion.seccion)</h4>
+        <h3>S O L I C I T U D&nbsp;&nbsp;&nbsp;D E&nbsp;&nbsp;&nbsp;I N S C R I P C I Ó N</h3>
+
+        <table id="datosEscuela">
+            <tr>
+                <th>
+                    <h3>Lino Merino No. 719 Col. Centro</h3>
+                </th>
+                <th>
+                    <h3>C.C.T. 27PPR0002G</h3>
+                </th>
+                <th>
+                    <h3>Tel. 9933128843</h3>
+                </th>
+            </tr>
+        </table>
+        <div class="grid">
+            <!-- Alumno -->
+            <div class="box">
+                <div class="fila">
+                    <div class="field"><span class="label">Ciclo escolar:</span><span class="value">#(inscripcion.cicloEscolar)</span></div>
+                    <div class="field"><span class="label">Año que cursará:</span><span class="value">#(inscripcion.grado)</span></div>
+                </div>
+                <div class="fila">
+                    <div class="field"><span class="label">Nombre del alumno:</span><span class="value">#(alumno.nombre)</span></div>
+                    <div class="field"><span class="label">Fecha de nacimiento:</span><span class="value">#(alumno.fechaNacimiento)</span></div>
+                    <div class="field"><span class="label">CURP:</span><span class="value">#(alumno.curp)</span></div>
                 </div>
             </div>
-            <div class="ui mobile only widescreen only grid">
-                <div class="ui top fixed borderless menu">
-                    <div class="item">
-                        <img src="./src/iu/logo.png"/>
-                        <span class="logo">Instituto Tabasco – Inscripciones</span>
-                    </div>
+
+            <!-- Tutor -->
+            <div class="box">
+                <div class="field"><span class="label">Tutor:</span><span class="value">#(tutor.parentesco)</span></div>
+                <div class="fila">
+                    <div class="field"><span class="label">Nombre del tutor:</span><span class="value">#(tutor.nombre)</span></div>
+                    <div class="field"><span class="label">Correo:</span><span class="value">#(tutor.correo)</span></div>
+                    <div class="field"><span class="label">Teléfono:</span><span class="value">#(tutor.telefono)</span></div>
+                    <div class="field"><span class="label">RFC:</span><span class="value">#(tutor.rfc)</span></div>
                 </div>
             </div>
-        </div>
-        <div id="formulario" class="ui header">
-            <h1 class="header">Bienvenido al Registro en línea del Instituto Tabasco</h1>
-            <div class="ui divider"></div>
-            <div class="ui middle aligned center aligned grid">
-                <div class="formulario column">
-                    <p>Todos los campos son obligatorios, escriba detenidamente</p>
-                    <form action="/registraInscripcion" method="POST" class="ui large form">
-                        <div class="ui stacked segment">
-                            <div class="field">
-                                <div class="ui left aligned dividing header">Datos del alumno 👧🧒</div>
-                                <div class="three fields">
-                                    <div class="field">
-                                        <label>Ciclo Escolar</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="cicloEscolar" placeholder="2024-2025">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <!--seleccion de seccion -->
-                                        <label>Sección</label>
-                                        <div class="ui left input">
-                                            <select type="select" id="seccion" name="seccion" placeholder="Selecciona una sección">
-                                                <option value="nulo">Selecciona una sección</option>
-                                                <option value="preescolar">Preescolar</option>
-                                                <option value="primaria">Primaria</option>
-                                                <option value="secundaria">Secundaria</option>
-                                                <option value="bachillerato">Bachillerato</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Grado a cursar</label>
-                                        <select type="select" id="grado" name="grado" placeholder="Selecciona un grado" disabled>
-                                            <option value="nulo">Selecciona un grado</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- Datos del alumno -->
-                                <div class="five fields">
-                                    <div class="field">
-                                        <label>Nombre(s)</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="alumnoNombre" placeholder="Luis Fernando">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Apellido paterno</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="alumnoApellidoPaterno" placeholder="García">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Apellido materno</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="alumnoApellidoMaterno" placeholder="Méndez">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Fecha de nacimiento</label>
-                                        <div class="ui left input">
-                                            <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>CURP</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="curp" placeholder="CURP">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- datos de tutor -->
-                                <div class="ui left aligned dividing header">Datos del Tutor 👩🧑</div>
-                                <div class="four fields">
-                                    <div class="field">
-                                        <label>Nombre(s)</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="tutorNombre" placeholder="Daniela">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Apellido paterno</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="tutorApellidoPaterno" placeholder="Carrasco">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Apellido materno</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="tutorApellidoMaterno" placeholder="Bautista">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>CURP</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="tutorCurp" placeholder="CURP">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="three fields">
-                                    <div class="field">
-                                        <label>RFC</label>
-                                        <div class="ui left input">
-                                            <input type="text" name="tutorRfc" placeholder="rfc">
-                                        </div>
-                                    </div>
-                                    <div class="three wide field">
-                                        <label>Número de teléfono</label>
-                                        <div class="ui left input">
-                                            <input type="tel" name="tutorTelefono" placeholder="9933128843">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Correo</label>
-                                        <div class="ui left input">
-                                            <input type="email" name="tutorCorreo" placeholder="ejemplo@icloud.com">
-                                        </div>
-                                    </div>
-                                    <div class="two wide field">
-                                        <!--seleccion de parentesco -->
-                                        <label>¿Tutor es?</label>
-                                        <div class="ui left input">
-                                            <select type="select" id="parentesco" name="parentesco" placeholder="¿Tutor es?">
-                                                <option value="nulo">Selecciona una opción</option>
-                                                <option value="madre">Madre</option>
-                                                <option value="padre">Padre</option>
-                                                <option value="otro">Otro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                      <label>¿Es pagador?</label>
-                                      <div class="ui toggle checkbox">
-                                          <input id="esPagador" type="checkbox" name="esPagador" checked>
-                                      </div>
-                                    </div>
-                                </div>
-                                <!-- datos de pagador, se debe ocultar y mostrar de acorde al checkbox esPagador -->
-                                <div id="pagador" style="display: none;">
-                                    <div class="ui left aligned dividing header">Datos del Pagador 💵💶</div>
-                                    <div class="four fields">
-                                        <div class="field">
-                                            <label>Nombre(s)</label>
-                                            <div class="ui left input">
-                                                <input type="text" name="pagadorNombre" placeholder="Daniela">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <label>Apellido paterno</label>
-                                            <div class="ui left input">
-                                                <input type="text" name="pagadorApellidoPaterno" placeholder="Carrasco">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <label>Apellido materno</label>
-                                            <div class="ui left input">
-                                                <input type="text" name="pagadorApellidoMaterno" placeholder="Bautista">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <label>CURP</label>
-                                            <div class="ui left input">
-                                                <input type="text" name="pagadorCurp" placeholder="CURP">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="three fields">
-                                        <div class="field">
-                                            <label>RFC</label>
-                                            <div class="ui left input">
-                                                <input type="text" name="pagadorRfc" placeholder="rfc">
-                                            </div>
-                                        </div>
-                                        <div class="three wide field">
-                                            <label>Número de teléfono</label>
-                                            <div class="ui left input">
-                                                <input type="tel" name="pagadorTelefono" placeholder="9933128843">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <label>Correo</label>
-                                            <div class="ui left input">
-                                                <input type="email" name="pagadorCorreo" placeholder="ejemplo@icloud.com">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- otros datos -->
-                                <div class="ui left aligned dividing header">Otros datos 📲</div>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>En caso de emergencia, llamar a</label>
-                                        <div class="ui left input">
-                                            <input type="tel" name="emergenciaTel" placeholder="911">
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <label>Domicilio particular</label>
-                                        <textarea name="domicilio" id="domicilio"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="ui fluid large blue submit button" type="submit">Registrar</button>
-                            <div class="ui error message"></div>
-                        </div>
-                    </form>
+
+            <!-- Pagador -->
+
+            <div class="box">
+                <div class="fila">
+                    <div class="field"><span class="label">Nombre:</span><span class="value">#(pagador.nombre)</span></div>
+                    <div class="field"><span class="label">Correo:</span><span class="value">#(pagador.correo)</span></div>
+                    <div class="field"><span class="label">Teléfono:</span><span class="value">#(pagador.telefono)</span></div>
+                    <div class="field"><span class="label">RFC:</span><span class="value">#(pagador.rfc)</span></div>
                 </div>
             </div>
-        </div>
-        <div class="ui vertical footer segment">
-            <div class="ui container">
-                <div class="ui stackable inverted divided equal height stackable grid">
-                    <div class="three wide column">
-                        <h4 class="ui header">Acerca de</h4>
-                        <div class="ui link list">
-                            <a class="item" href="https://valorkand.github.io/vcwebsite">Hecho por Vales Corp</a>
-                            <a class="item" id="avisoPrivacidad">Aviso de privacidad</a>
-                            <a class="item" href="mailto:david.tab2023@icloud.com">Reportar un error</a>
-                        </div>
-                    </div>
-                    <div class="three wide column">
-                        <h4 class="ui inverted header">Encuéntranos en</h4>
-                        <div class="ui inverted link list">
-                            <a class="ui facebook icon button" href="https://www.facebook.com/people/Instituto-Tabasco/100069703609214/" target="_blank"><i class="facebook icon"></i></a>
-                            <a class="ui pink icon button" href="https://www.instagram.com/institutotabasco/"><i class="instagram icon" target="_blank"></i></a>
-                            <a class="ui youtube icon button" href="https://www.youtube.com/@institutotabasco9927" target="_blank"><i class="youtube icon"></i></a>
-                            <a class="ui white icon button" href="mailto:institutotabasco.edu@gmail.com" target="_blank"><i class="envelope icon"></i></a>
-                        </div>
-                    </div>
-                    <div class="seven wide column">
-                        <h4 class="ui inverted header">Instituto Tabasco</h4>
-                        <p>
-                            Hecho con Amor, Software Libre, y 100% de Código Abierto, más información acerca
-                            de su desarrollo <a href="./paginas/extra/acercade.html">aquí</a>
-                        </p>
-                    </div>
-                </div>
+
+            <!-- Otros -->
+            <div class="box">
+                <div class="field"><span class="label">En caso de emergencia llamar a:</span><span class="value">#(inscripcion.emergenciaTel)</span></div>
+                <div class="field"><span class="label">Domicilio:</span><span class="value">#(inscripcion.domicilio)</span></div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
-        <script src="./src/js/funciones.js"></script>
-        <script src="./src/js/validaInscripcion.js"></script>
-        <script src="./src/js/validaFecha.js"></script>
+
+        <div class="footer">
+            Fecha de inscripción: #(fecha)
+        </div>
     </body>
 </html>

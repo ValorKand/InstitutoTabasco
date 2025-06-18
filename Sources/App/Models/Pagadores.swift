@@ -1,6 +1,11 @@
-// Pagador.swift
-// Modelo de registro a base de datos de la tabla pagadores
-// Los nombres en los modelos tienen que ser a como están en la base de datos
+//
+//  Pagadores.swift
+//  InstitutoTabasco
+//
+//  Creado por Vales Corp en ??/06/25.
+//
+// 	Modelo de registro a base de datos de la tabla pagadores
+// 	Los nombres en los modelos tienen que ser a como están en la base de datos
 
 import Fluent
 import Vapor

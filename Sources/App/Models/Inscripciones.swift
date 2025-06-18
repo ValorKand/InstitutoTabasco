@@ -1,5 +1,10 @@
-// Inscripcion.swift
-// Modelo de registro a base de datos de la tabla inscripciones
+//
+//  Inscripciones.swift
+//  InstitutoTabasco
+//
+//  Creado por Vales Corp en 15/06/25.
+//
+//	Modelo de registro a base de datos de la tabla inscripciones
 
 import Fluent
 import Vapor

@@ -158,7 +158,7 @@
                         <div id="titulo" class="column">
                             <h1 class="enorme">Empieza a estudiar en el <b>mejor colegio</b> de <span class="azul">Villahermosa</span></h1>
                             <h1 class="dorado enorme">¡Inscríbete ahora!</h1>
-                            <a href="/inscripcion.leaf" class="ui circular massive red button">
+                            <a href="/formularioInscripcion.leaf" class="ui circular massive red button">
                                 <span class="boton icono material-symbols-outlined">edit_square</span>
                                 Iniciar inscripción
                             </a>

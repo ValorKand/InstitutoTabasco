@@ -1,2 +1,0 @@
-// HacerPDF.swift – Vales Corp
-

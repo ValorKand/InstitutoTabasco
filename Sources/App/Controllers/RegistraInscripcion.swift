@@ -1,11 +1,16 @@
-// RegistraInscripcion.swift
-// Registra el proceso de inscripcion a la base de datos en tablas alumnos, tutores, inscripciones, historial_movimientos
+//
+//  RegistraInscripcion.swif
+//  InstitutoTabasco
+//
+//  Creado por Vales Corp en no me acuerdo.
+//
+// Registra el proceso de inscripción a la base de datos en tablas alumnos, tutores, inscripciones, historial_movimientos
 // TODO: ya funciona, solo hay que afinar detalles jijiji
 
 import Fluent
 import Vapor
 
-func registrarInscripcion(req: Request) async throws -> HTTPStatus {
+func registrarInscripcion(req: Request) async throws -> Response {
     let registro = try req.content.decode(RecogeInscripcion.self)
 
     //Verificar si el marcador de pagador esta activado o no
@@ -20,7 +25,7 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
     	throw Abort(.badRequest, reason: "Parentesco inválido: \(registro.parentesco)")
     }
 
-    return try await req.db.transaction { db in
+    let redireccionp3 = try await req.db.transaction { db in
         // 1. Registrar Alumno
         let alumno = Alumnos(
             nombre: registro.alumnoNombre,
@@ -71,11 +76,11 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
     			// Validación obligatoria de campos del pagador
     			guard let nombre = registro.pagadorNombre,
           	let apellidoPaterno = registro.pagadorApellidoPaterno,
-            let apellidoMaterno = registro.pagadorApellidoMaterno,
-            let curp = registro.pagadorCurp,
-            let telefono = registro.pagadorTelefono,
-            let correo = registro.pagadorCorreo,
-            let rfc = registro.pagadorRfc else {
+            	let apellidoMaterno = registro.pagadorApellidoMaterno,
+            	let curp = registro.pagadorCurp,
+            	let telefono = registro.pagadorTelefono,
+            	let correo = registro.pagadorCorreo,
+            	let rfc = registro.pagadorRfc else {
         		throw Abort(.badRequest, reason: "Faltan datos del pagador.")
     		}
 
@@ -104,6 +109,53 @@ func registrarInscripcion(req: Request) async throws -> HTTPStatus {
         )
         try await inscripcion.create(on: db)
 
-        return .created
+		// Para el supuesto contexto anterior
+		let formatoFecha = DateFormatter()
+		formatoFecha.dateStyle = .medium
+		formatoFecha.locale = Locale(identifier: "es_MX")
+
+		let fechaNacimientoFormateada = formatoFecha.string(from: registro.fechaNacimiento)
+		let alumnoDato = AlumnoDato(
+			nombre: "\(alumno.nombre) \(alumno.apellidoPaterno) \(alumno.apellidoMaterno)",
+			fechaNacimiento: fechaNacimientoFormateada,
+			curp: alumno.curp
+		)
+
+		let tutorDato = TutorDato(
+			parentesco: parentescoEnum.rawValue,
+			nombre: "\(registro.tutorNombre) \(registro.tutorApellidoPaterno) \(registro.tutorApellidoMaterno)",
+			correo: registro.tutorCorreo,
+			telefono: registro.tutorTelefono,
+			rfc: registro.tutorRfc
+		)
+
+		let pagadorDato: PagadorDato? = esPagador ? nil : PagadorDato(
+			nombre: "\(registro.pagadorNombre ?? "") \(registro.pagadorApellidoPaterno ?? "") \(registro.pagadorApellidoMaterno ?? "")",
+			correo: registro.pagadorCorreo ?? "",
+			telefono: registro.pagadorTelefono ?? "",
+			rfc: registro.pagadorRfc ?? ""
+		)
+
+		let inscripcionDato = InscripcionDato(
+			cicloEscolar: registro.cicloEscolar,
+			grado: registro.grado,
+			seccion: seccionEnum.rawValue,
+			domicilio: registro.domicilio,
+			emergenciaTel: registro.emergenciaTel
+		)
+
+		let contextop3 = InscripcionContexto(
+			alumno: alumnoDato,
+			tutor: tutorDato,
+			pagador: pagadorDato,
+			inscripcion: inscripcionDato,
+			fecha: formatoFecha.string(from: Date())
+		)
+        //return .created
+        //return req.redirect(to: "/inscripcion")
+        print("Renderizando plantilla con: \(contextop3)")
+        //return try await req.view.render("inscripcion", contextop3)
+        return req.redirect(to: "/inscripcion/\(alumno.id!)")
     }
+    return redireccionp3
 }

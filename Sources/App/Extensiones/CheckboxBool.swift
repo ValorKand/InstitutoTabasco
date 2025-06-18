@@ -1,4 +1,9 @@
-//CheckboxBool.swift
+//
+//  CheckboxBool.swift
+//  InstitutoTabasco
+//
+//  Creado por Vales Corp en dd?/06/25.
+//
 import Vapor
 
 @propertyWrapper
