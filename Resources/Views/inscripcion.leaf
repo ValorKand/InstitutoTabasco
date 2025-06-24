@@ -28,8 +28,6 @@
                 border: 1px solid #ccc;
                 padding: 1em;
                 border-radius: 2px;
-                /*margin-left: 15%;
-                margin-right: 15%;*/
             }
 
             .fila {
@@ -75,10 +73,50 @@
                 padding-left: 3em;
                 padding-right: 3em;
             }
+
+            #nombreIT {
+                font-size: 2rem;
+                text-align: center;
+                margin: 1rem 0;
+            }
+
+            .logo {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .logo img {
+                width: 3%;
+            }
+            .encabezadoIT {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .encabezadoIT img {
+                height: 50px;
+                width: auto;
+            }
+
+            .encabezadoIT h1 {
+                margin: 0;
+                font-size: 2rem;
+                text-align: center;
+            }
+
         </style>
     </head>
     <body>
-        <h1>INSTITUTO TABASCO</h1>
+
+        <div class="encabezadoIT">
+            <img src="https://institutotabasco.edu.mx/img/ui/pagina/logoit.webp" alt="Logo IT" />
+            <h1>INSTITUTO TABASCO</h1>
+        </div>
         <h2>#(inscripcion.seccion)</h2>
         <h3>S O L I C I T U D&nbsp;&nbsp;&nbsp;D E&nbsp;&nbsp;&nbsp;I N S C R I P C I Ó N</h3>
 
@@ -143,3 +181,4 @@
         </div>
     </body>
 </html>
+

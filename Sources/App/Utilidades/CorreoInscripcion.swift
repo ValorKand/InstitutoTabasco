@@ -7,7 +7,8 @@
 
 import Vapor
 
-func enviarCorreoInscripcionExitosa(req: Request, contexto: InscripcionContexto) async throws {
+/*
+func enviarCorreoInscripcionExitosa(req: Request, alumno: Alumnos, html: String) async throws {
     struct InscripcionContexto: Encodable {
         let alumno: Alumnos
     }
@@ -36,4 +37,25 @@ func enviarCorreoInscripcionExitosa(req: Request, contexto: InscripcionContexto)
         asunto: "🎓 Inscripción exitosa – Instituto Tabasco",
         cuerpoHTML: html
     )
+}
+*/
+
+func enviarCorreoInscripcionExitosa(req: Request, alumno: Alumnos, html: String) async throws {
+	// Cargar tutores relacionados del alumno
+	try await alumno.$tutores.load(on: req.db)
+
+	// Buscar tutor pagador o el primero
+	guard let tutorParaCorreo = alumno.tutores.first(where: { $0.esPagador == true }) ?? alumno.tutores.first else {
+		throw Abort(.notFound, reason: "No se encontró tutor para enviar correo")
+	}
+
+	let destinatario = tutorParaCorreo.correo
+
+	// Enviar correo con Resend
+	try await enviarCorreoConResend(
+		req: req,
+		to: destinatario,
+		asunto: "🎓 Inscripción exitosa – Instituto Tabasco",
+		cuerpoHTML: html
+	)
 }

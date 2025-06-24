@@ -1,4 +1,9 @@
-//Funciones.swift
+//
+//  Fechas.swift
+//  InstitutoTabasco
+//
+//  Creado por Vales Corp en dd?/06/25.
+//
 
 import Foundation
 

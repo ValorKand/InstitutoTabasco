@@ -112,7 +112,7 @@ func mostrarInscripcionPDF(req: Request) async throws -> Response {
 		InscripcionDato(
 			cicloEscolar: $0.cicloEscolar,
 			grado: $0.grado,
-			seccion: $0.seccion.rawValue,
+			seccion: $0.seccion.nombreBonito,
 			domicilio: $0.domicilio,
 			emergenciaTel: $0.emergenciaTel,
 			fechaRegistro: DateFormatter.yyyyMMdd.string(from: $0.fechaRegistro)
@@ -121,7 +121,7 @@ func mostrarInscripcionPDF(req: Request) async throws -> Response {
 
 	// Aquí añadí al contexto los nuevos parámetros de arriba
 	let contextop3 = InscripcionContexto(alumno: alumnoDato, tutor: tutorDato, pagador: pagadorDato, inscripcion: inscripcionDato)
-	let view = try await req.view.render("inscripcion", contextop3).get() // 👈 aquí la clave
+	let view = try await req.view.render("inscripcion", contextop3).get()
 	let html = view.data.getString(at: 0, length: view.data.readableBytes) ?? ""
 
 	print("Este es el contexto que se genera \(contextop3)")
@@ -140,7 +140,7 @@ func mostrarInscripcionPDF(req: Request) async throws -> Response {
 
     // Enviar el correo en segundo plano (opcional si no quieres bloquear al usuario)
 	Task {
-		try? await enviarCorreoInscripcionExitosa(req: req, alumno: alumno)
+		try? await enviarCorreoInscripcionExitosa(req: req, alumno: alumno, html: html)
 	}
 
     return Response(
