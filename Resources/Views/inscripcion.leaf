@@ -7,14 +7,14 @@
         <style>
             body {
                 font-family: sans-serif;
-                padding: 2em;
+                padding: 0em;
                 font-size: 14px;
             }
 
-            h1, h3, h4 {
+            h1, h2, h3, h4 {
                 text-align: center;
                 color: #333;
-                margin-bottom: 1em;
+                margin-bottom: 0em;
             }
 
             .grid {
@@ -27,9 +27,9 @@
                 flex: 1;
                 border: 1px solid #ccc;
                 padding: 1em;
-                border-radius: 8px;
-                margin-left: 15%;
-                margin-right: 15%;
+                border-radius: 2px;
+                /*margin-left: 15%;
+                margin-right: 15%;*/
             }
 
             .fila {
@@ -79,7 +79,7 @@
     </head>
     <body>
         <h1>INSTITUTO TABASCO</h1>
-        <h4>#(inscripcion.seccion)</h4>
+        <h2>#(inscripcion.seccion)</h2>
         <h3>S O L I C I T U D&nbsp;&nbsp;&nbsp;D E&nbsp;&nbsp;&nbsp;I N S C R I P C I Ó N</h3>
 
         <table id="datosEscuela">
@@ -103,7 +103,7 @@
                     <div class="field"><span class="label">Año que cursará:</span><span class="value">#(inscripcion.grado)</span></div>
                 </div>
                 <div class="fila">
-                    <div class="field"><span class="label">Nombre del alumno:</span><span class="value">#(alumno.nombre)</span></div>
+                    <div class="field"><span class="label">Nombre del alumno:</span><span class="value">#(alumno.nombre) #(alumno.apellidoPaterno) #(alumno.apellidoMaterno)</span></div>
                     <div class="field"><span class="label">Fecha de nacimiento:</span><span class="value">#(alumno.fechaNacimiento)</span></div>
                     <div class="field"><span class="label">CURP:</span><span class="value">#(alumno.curp)</span></div>
                 </div>
@@ -113,7 +113,7 @@
             <div class="box">
                 <div class="field"><span class="label">Tutor:</span><span class="value">#(tutor.parentesco)</span></div>
                 <div class="fila">
-                    <div class="field"><span class="label">Nombre del tutor:</span><span class="value">#(tutor.nombre)</span></div>
+                    <div class="field"><span class="label">Nombre del tutor:</span><span class="value">#(tutor.nombre) #(tutor.apellidoPaterno) #(tutor.apellidoMaterno)</span></div>
                     <div class="field"><span class="label">Correo:</span><span class="value">#(tutor.correo)</span></div>
                     <div class="field"><span class="label">Teléfono:</span><span class="value">#(tutor.telefono)</span></div>
                     <div class="field"><span class="label">RFC:</span><span class="value">#(tutor.rfc)</span></div>
@@ -124,7 +124,7 @@
 
             <div class="box">
                 <div class="fila">
-                    <div class="field"><span class="label">Nombre:</span><span class="value">#(pagador.nombre)</span></div>
+                    <div class="field"><span class="label">Nombre:</span><span class="value">#(pagador.nombre) #(pagador.apellidoPaterno) #(pagador.apellidoMaterno)</span></div>
                     <div class="field"><span class="label">Correo:</span><span class="value">#(pagador.correo)</span></div>
                     <div class="field"><span class="label">Teléfono:</span><span class="value">#(pagador.telefono)</span></div>
                     <div class="field"><span class="label">RFC:</span><span class="value">#(pagador.rfc)</span></div>
@@ -139,7 +139,7 @@
         </div>
 
         <div class="footer">
-            Fecha de inscripción: #(fecha)
+            Fecha de inscripción: #(inscripcion.fechaRegistro)
         </div>
     </body>
 </html>

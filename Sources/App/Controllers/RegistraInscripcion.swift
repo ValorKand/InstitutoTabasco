@@ -116,21 +116,27 @@ func registrarInscripcion(req: Request) async throws -> Response {
 
 		let fechaNacimientoFormateada = formatoFecha.string(from: registro.fechaNacimiento)
 		let alumnoDato = AlumnoDato(
-			nombre: "\(alumno.nombre) \(alumno.apellidoPaterno) \(alumno.apellidoMaterno)",
+			nombre: alumno.nombre,
+			apellidoPaterno: alumno.apellidoPaterno,
+			apellidoMaterno: alumno.apellidoMaterno,
 			fechaNacimiento: fechaNacimientoFormateada,
 			curp: alumno.curp
 		)
 
 		let tutorDato = TutorDato(
 			parentesco: parentescoEnum.rawValue,
-			nombre: "\(registro.tutorNombre) \(registro.tutorApellidoPaterno) \(registro.tutorApellidoMaterno)",
+			nombre: registro.tutorNombre,
+			apellidoPaterno: registro.tutorApellidoPaterno,
+			apellidoMaterno: registro.tutorApellidoMaterno,
 			correo: registro.tutorCorreo,
 			telefono: registro.tutorTelefono,
 			rfc: registro.tutorRfc
 		)
 
 		let pagadorDato: PagadorDato? = esPagador ? nil : PagadorDato(
-			nombre: "\(registro.pagadorNombre ?? "") \(registro.pagadorApellidoPaterno ?? "") \(registro.pagadorApellidoMaterno ?? "")",
+			nombre: registro.pagadorNombre ?? "",
+			apellidoPaterno: registro.pagadorApellidoPaterno ?? "",
+			apellidoMaterno: registro.pagadorApellidoMaterno ?? "",
 			correo: registro.pagadorCorreo ?? "",
 			telefono: registro.pagadorTelefono ?? "",
 			rfc: registro.pagadorRfc ?? ""
@@ -141,15 +147,16 @@ func registrarInscripcion(req: Request) async throws -> Response {
 			grado: registro.grado,
 			seccion: seccionEnum.rawValue,
 			domicilio: registro.domicilio,
-			emergenciaTel: registro.emergenciaTel
+			emergenciaTel: registro.emergenciaTel,
+			fechaRegistro: formatoFecha.string(from: Date())
 		)
 
 		let contextop3 = InscripcionContexto(
 			alumno: alumnoDato,
 			tutor: tutorDato,
 			pagador: pagadorDato,
-			inscripcion: inscripcionDato,
-			fecha: formatoFecha.string(from: Date())
+			inscripcion: inscripcionDato
+			//fecha: formatoFecha.string(from: Date())
 		)
         //return .created
         //return req.redirect(to: "/inscripcion")

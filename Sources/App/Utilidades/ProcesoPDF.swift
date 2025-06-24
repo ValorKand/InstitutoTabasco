@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-func hacerPDF(alumno: Alumnos, html: String, req: Request) async throws -> ByteBuffer {
+func hacerPDF(alumno: Alumnos, tutor: Tutores?, pagador: Pagadores?, inscripcion: Inscripciones?, html: String, req: Request) async throws -> ByteBuffer {
 	// Guarda HTML temporalmente
   	let tempHTML = "/tmp/inscripcion-\(alumno.id!).html"
   	let tempPDF = "/tmp/inscripcion-\(alumno.id!).pdf"
@@ -19,6 +19,10 @@ func hacerPDF(alumno: Alumnos, html: String, req: Request) async throws -> ByteB
   	let process = Process()
   	process.executableURL = URL(fileURLWithPath: "/usr/bin/wkhtmltopdf")
   	process.arguments = [
+		"--margin-top", "5mm",
+		"--margin-bottom", "5mm",
+		"--margin-left", "1mm",
+		"--margin-right", "1mm",
 		"--page-width", "215.9mm",
 		"--page-height", "139.7mm",
 		tempHTML,

@@ -12,11 +12,13 @@ struct InscripcionContexto: Encodable {
     let tutor: TutorDato
     let pagador: PagadorDato?
     let inscripcion: InscripcionDato
-    let fecha: String
+    //let fecha: String
 }
 
 struct AlumnoDato: Encodable {
     let nombre: String
+    let apellidoPaterno: String
+    let apellidoMaterno: String
     let fechaNacimiento: String
     let curp: String
 }
@@ -24,6 +26,8 @@ struct AlumnoDato: Encodable {
 struct TutorDato: Encodable {
     let parentesco: String
     let nombre: String
+    let apellidoPaterno: String
+    let apellidoMaterno: String
     let correo: String
     let telefono: String
     let rfc: String
@@ -31,6 +35,8 @@ struct TutorDato: Encodable {
 
 struct PagadorDato: Encodable {
     let nombre: String
+    let apellidoPaterno: String
+    let apellidoMaterno: String
     let correo: String
     let telefono: String
     let rfc: String
@@ -42,4 +48,5 @@ struct InscripcionDato: Encodable {
     let seccion: String
     let domicilio: String
     let emergenciaTel: String
+    let fechaRegistro: String
 }

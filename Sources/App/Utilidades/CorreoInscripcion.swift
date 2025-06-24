@@ -7,15 +7,15 @@
 
 import Vapor
 
-func enviarCorreoInscripcionExitosa(req: Request, alumno: Alumnos) async throws {
+func enviarCorreoInscripcionExitosa(req: Request, contexto: InscripcionContexto) async throws {
     struct InscripcionContexto: Encodable {
         let alumno: Alumnos
     }
 
-    let contexto = InscripcionContexto(alumno: alumno)
+    let contextop3 = InscripcionContexto(alumno: alumno)
 
     // Renderiza la vista Leaf como HTML (usa .get() para obtener View no futuro)
-    let renderedView = try await req.view.render("inscripcion", contexto).get()
+    let renderedView = try await req.view.render("inscripcion", contextop3).get()
     let html = renderedView.data.getString(at: 0, length: renderedView.data.readableBytes) ?? "No se pudo renderizar la vista"
 
     // Cargar tutores relacionados del alumno
