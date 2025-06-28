@@ -15,6 +15,10 @@ func routes(_ app: Application) throws {
         try await req.view.render("formularioInscripcion", ["title": "Instituto Tabasco – Inscripciones"])
     }
 
+    app.get("formularioBeta.leaf") { req async throws -> View in
+        try await req.view.render("formularioBeta", ["title": "Instituto Tabasco – Inscripciones"])
+    }
+
     app.post("registraInscripcion", use: registrarInscripcion)
 
     /*app.get("inscripcion", ":alumnoID") { req async throws in

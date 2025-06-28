@@ -49,4 +49,5 @@ struct InscripcionDato: Encodable {
     let domicilio: String
     let emergenciaTel: String
     let fechaRegistro: String
+    let cct: String
 }

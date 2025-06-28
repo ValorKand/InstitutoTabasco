@@ -29,6 +29,7 @@
 }
 
 #formulario {
+    padding-top: 6.5%;
     background-image: url("../iu/fondo.webp");
     background-size: cover;
 }
@@ -44,4 +45,21 @@
     -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
     border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
     box-shadow: none !important; /* Quita sombras predeterminadas */
+}
+
+/* Propiedades del formulario */
+
+.tituloformulario {
+    text-align: center;
+}
+
+.tituloformulario h1 {
+    font-weight: bold;
+    font-size: 24pt;
+}
+
+.ui.input input {
+    -moz-border-radius: 12px !important;
+    -webkit-border-radius: 12px !important;
+    border-radius: 12px !important;
 }

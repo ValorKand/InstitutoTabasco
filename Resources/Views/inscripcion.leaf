@@ -108,7 +108,6 @@
                 font-size: 2rem;
                 text-align: center;
             }
-
         </style>
     </head>
     <body>
@@ -126,7 +125,7 @@
                     <h3>Lino Merino No. 719 Col. Centro</h3>
                 </th>
                 <th>
-                    <h3>C.C.T. 27PPR0002G</h3>
+                    <h3>#(inscripcion.cct)</h3>
                 </th>
                 <th>
                     <h3>Tel. 9933128843</h3>

@@ -115,7 +115,8 @@ func mostrarInscripcionPDF(req: Request) async throws -> Response {
 			seccion: $0.seccion.nombreBonito,
 			domicilio: $0.domicilio,
 			emergenciaTel: $0.emergenciaTel,
-			fechaRegistro: DateFormatter.yyyyMMdd.string(from: $0.fechaRegistro)
+			fechaRegistro: DateFormatter.yyyyMMdd.string(from: $0.fechaRegistro),
+			cct: $0.seccion.cct
 		)
 	}
 

@@ -40,8 +40,8 @@ func registrarInscripcion(req: Request) async throws -> Response {
         // Si el tutor es pagador:
         // if let esPagador = registro.esPagador, esPagador <– anterior
         if esPagador {
-    			// Tutor es pagador
 
+    			// Tutor es pagador
     			let tutor = Tutores(
         			alumnoId: alumno.id!,
         			parentesco: parentescoEnum,
@@ -57,8 +57,8 @@ func registrarInscripcion(req: Request) async throws -> Response {
     			try await tutor.create(on: db)
 
 		} else {
-			// Tutor NO es pagador: se registra tutor + pagador
 
+			// Tutor NO es pagador: se registra tutor + pagador
 			let tutor = Tutores(
 		    		alumnoId: alumno.id!,
 		    		parentesco: parentescoEnum,
@@ -109,59 +109,7 @@ func registrarInscripcion(req: Request) async throws -> Response {
         )
         try await inscripcion.create(on: db)
 
-		// Para el supuesto contexto anterior
-		let formatoFecha = DateFormatter()
-		formatoFecha.dateStyle = .medium
-		formatoFecha.locale = Locale(identifier: "es_MX")
-
-		let fechaNacimientoFormateada = formatoFecha.string(from: registro.fechaNacimiento)
-		let alumnoDato = AlumnoDato(
-			nombre: alumno.nombre,
-			apellidoPaterno: alumno.apellidoPaterno,
-			apellidoMaterno: alumno.apellidoMaterno,
-			fechaNacimiento: fechaNacimientoFormateada,
-			curp: alumno.curp
-		)
-
-		let tutorDato = TutorDato(
-			parentesco: parentescoEnum.rawValue,
-			nombre: registro.tutorNombre,
-			apellidoPaterno: registro.tutorApellidoPaterno,
-			apellidoMaterno: registro.tutorApellidoMaterno,
-			correo: registro.tutorCorreo,
-			telefono: registro.tutorTelefono,
-			rfc: registro.tutorRfc
-		)
-
-		let pagadorDato: PagadorDato? = esPagador ? nil : PagadorDato(
-			nombre: registro.pagadorNombre ?? "",
-			apellidoPaterno: registro.pagadorApellidoPaterno ?? "",
-			apellidoMaterno: registro.pagadorApellidoMaterno ?? "",
-			correo: registro.pagadorCorreo ?? "",
-			telefono: registro.pagadorTelefono ?? "",
-			rfc: registro.pagadorRfc ?? ""
-		)
-
-		let inscripcionDato = InscripcionDato(
-			cicloEscolar: registro.cicloEscolar,
-			grado: registro.grado,
-			seccion: seccionEnum.rawValue,
-			domicilio: registro.domicilio,
-			emergenciaTel: registro.emergenciaTel,
-			fechaRegistro: formatoFecha.string(from: Date())
-		)
-
-		let contextop3 = InscripcionContexto(
-			alumno: alumnoDato,
-			tutor: tutorDato,
-			pagador: pagadorDato,
-			inscripcion: inscripcionDato
-			//fecha: formatoFecha.string(from: Date())
-		)
-        //return .created
-        //return req.redirect(to: "/inscripcion")
-        print("Renderizando plantilla con: \(contextop3)")
-        //return try await req.view.render("inscripcion", contextop3)
+		// Retorna la vista con el id del alumno
         return req.redirect(to: "/inscripcion/\(alumno.id!)")
     }
     return redireccionp3
